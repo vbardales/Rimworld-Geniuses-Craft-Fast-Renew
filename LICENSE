@@ -24,23 +24,22 @@ SOFTWARE.
 ---------------------------------------------------------------------------
 SCOPE OF THE ABOVE
 
-The MIT licence above covers only what the 1.6 update added:
+The MIT licence above covers only what this update added:
 
-  - the C# written for this update and the assembly built from it
-  - the English and French translations
-  - the Disfigured patch, the build files and the packaging
+  - the conditional rewrite of the patch operation
+  - the English and French documentation, and the packaging
+  - About/Preview.png and About/ModIcon.png, which are new work
 
-IT DOES NOT COVER THE ORIGINAL MOD. The textures, the artwork, the defs and the
-whole design of "NeckAccessory [1.0]" are Udon's work, reused here:
+IT DOES NOT COVER THE ORIGINAL MOD. The idea, and the two numbers that are the
+whole of it, are Buitrago's work, reused here:
 
-  https://steamcommunity.com/sharedfiles/filedetails/?id=1611488293
+  https://steamcommunity.com/sharedfiles/filedetails/?id=2625574564
 
-Udon never declared a licence for them, so none is granted here and none can
+Buitrago never declared a licence for them, so none is granted here and none can
 be. They are redistributed under the usual practice for abandoned mods -
-explicit credit, a link to the original, and removal on request. The Japanese
-translation shipped with this mod is Udon's as well.
+explicit credit, a link to the original, and removal on request.
 
-If Udon asks for this to be taken down, it comes down. Immediately, and without
-discussion.
+If Buitrago asks for this to be taken down, it comes down. Immediately, and
+without discussion.
 
-ATTRIBUTION.md records what was taken and what was changed, file by file.
+ATTRIBUTION.md records what was taken and what was changed.
