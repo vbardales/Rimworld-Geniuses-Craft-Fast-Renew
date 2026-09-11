@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>Geniuses Craft Fast Patched</name>
+  <name>Geniuses Craft Fast Renew</name>
   <author>Buitrago - 1.6 update by nelim</author>
-  <packageId>nelim.geniusescraftfastpatched</packageId>
-  <url>https://github.com/vbardales/Rimworld-Geniuses-Craft-Fast-Patched</url>
+  <packageId>nelim.geniusescraftfast</packageId>
+  <url>https://github.com/vbardales/Rimworld-Geniuses-Craft-Fast-Renew</url>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
@@ -51,7 +51,7 @@ XML only: no assembly, no dependency, no def of its own. Safe to add to an ongoi
 
 Do not run it alongside the original mod.
 
-Source, changelog and the full list of what the update changed: https://github.com/vbardales/Rimworld-Geniuses-Craft-Fast-Patched
+Source, changelog and the full list of what the update changed: https://github.com/vbardales/Rimworld-Geniuses-Craft-Fast-Renew
 
 The update work was done with the help of an AI assistant (Claude, by Anthropic). Thanks to Buitrago for the mod.
 

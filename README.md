@@ -1,4 +1,4 @@
-# Geniuses Craft Fast Patched
+# Geniuses Craft Fast Renew
 
 A RimWorld 1.6 update of **GeniusesCraftFast** by Buitrago
 ([Steam 2625574564](https://steamcommunity.com/sharedfiles/filedetails/?id=2625574564), 1.3,
