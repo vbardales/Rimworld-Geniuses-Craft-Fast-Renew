@@ -42,7 +42,7 @@ the change the mod exists to make.
 |---|---|
 | `supportedVersions` | `1.3` → `1.6`. |
 | `PatchOperationAdd` on a missing `<skillNeedFactors>` | Replaced by a `PatchOperationConditional`: add to the list if one exists, create it otherwise. See below. |
-| `packageId` | `Buitrago.GeniusesCraftFast` → `nelim.geniusescraftfast`, with `<incompatibleWith>` on the original so the two cannot run together. |
+| `packageId` | `Buitrago.GeniusesCraftFast` → `nelim.geniusescraftfastrenew`, with `<incompatibleWith>` on the original so the two cannot run together. |
 | `Patches/Patch.xml` | Renamed `Mod/Patches/GeneralLaborSpeed.xml`, after what it patches. |
 
 **The conditional is the only real change.** Vanilla's `GeneralLaborSpeed`
