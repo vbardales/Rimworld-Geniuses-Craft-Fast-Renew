@@ -12,7 +12,7 @@ showcase:     complete
 tested_on:
 workshop:
 remaining:
-  - unverified: never seen running in game
+  - unverified: the nine scenarios in TESTING.md, none played
 session:      local_ee3236c6-0c0c-4486-8420-7ec19ccd2a13
 updated:      2026-09-12, the mod's own session
 ---
@@ -34,9 +34,10 @@ by the thread that holds this mod:
   carries no `skillNeedFactors`, which is what the conditional was written for — in a vanilla
   game the `nomatch` branch is the one that runs.
 - **`tested_on`** — empty, and that is the honest state: RimWorld has never loaded this mod.
-  What a first run has to settle is narrow. The patch either applied or it did not, and the
-  General labor speed line of a colonist's stat card says which; a level 0 crafter should read
-  30% of the vanilla figure and a level 10 one 530%.
+  `TESTING.md` says what the first run has to settle, and the log settles almost none of it: one
+  patch operation and no def of its own, so a patch that lands writes nothing and a patch that
+  lands twice writes nothing either. The reading that decides is the skill factor line on a
+  colonist's stat card.
 - **`dependencies: none`** — literal here. XML only, no assembly, no framework, no DLC
   requirement, and the About's `loadAfter` names nothing but Core and the five expansions. The
   value means the mod needs nothing, as against `declared` when every mod it needs is named in

@@ -27,7 +27,16 @@ Do not run it alongside the original mod; `<incompatibleWith>` declares the clas
     Art/                               full-resolution image sources, never published
     ATTRIBUTION.md                     what is Buitrago's, what the update changed
     CHANGELOG.md                       release notes
+    TESTING.md                         what the first run in game has to settle
     LICENSE                            MIT, over the update work only
+
+## Testing it
+
+The log settles almost nothing here. One patch operation and no def of its own means a patch that
+lands writes nothing, and a patch that lands twice writes nothing either. The reading that decides
+is the skill factor line on a colonist's stat card, and [TESTING.md](TESTING.md) holds the nine
+scenarios that take it — including the one worth reading before playing, since sculpting, chemfuel
+and cremation all ride this stat and cutting stone grants no crafting experience at all.
 
 ## Retuning it
 
