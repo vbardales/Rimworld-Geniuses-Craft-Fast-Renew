@@ -7,7 +7,7 @@ no def of its own. There is no `defName` to collide, no texture to miss, no `Cla
 at load. A patch that fails to find its target writes one line and that line is worth searching
 for — but a patch that lands writes nothing at all, and a patch that lands *twice* also writes
 nothing. So the real test is arithmetic, read off a colonist's stat card, and the whole of this
-file is that one reading taken under seven different conditions.
+file uses that reading alongside work timing and save reloads in nine scenarios.
 
 The numbers below were not remembered. `SkillNeed_BaseBonus.ValueAtLevel` was read out of
 `Assembly-CSharp.dll` on 2026-09-12 and is exactly `baseValue + bonusPerLevel × level`, with no
@@ -19,12 +19,13 @@ level plus aptitude into 0–20; and `StatWorker` uses `StatDef.noSkillFactor`, 
 
 ## Enabling it
 
-No dependency, no framework, no DLC requirement, and nothing in the About's `loadAfter` but Core
-and the five expansions. Position in the list does not matter, with one exception named in
-scenario 3.
+No dependency, no framework, no DLC requirement. The About's `loadAfter` names Core, the five
+expansions, DeCore and Stats Matter(continued). The last two are optional: when present, load
+them before Renew to preserve the skill-factor list and Renew's entry. Their factors still
+multiply with Renew's; see scenario 3.
 
 ```
-nelim.geniusescraftfastrenew       this mod            anywhere in the list
+nelim.geniusescraftfastrenew       this mod            check overlaps in scenario 3
 ```
 
 It is already active: line 24 of `ModsConfig.xml`, checked on 2026-09-12. Empty `Player.log`
@@ -44,8 +45,8 @@ than remembered.
 | `Error in patch.Apply():` | `LoadedModManager.ApplyPatches` | An exception rather than a miss, and it aborts the rest of that patch file. |
 | `Config error in` … `patch` | `LoadedModManager.ErrorCheckPatches` | A malformed operation, caught before anything is applied. |
 
-**A clean log proves only that the patch was applied, never that it was applied once.** That is
-scenario 3.
+**A clean log does not prove that the intended factor is present or present only once.** Read
+the stat card in scenarios 1 to 3.
 
 ---
 
@@ -78,17 +79,60 @@ manipulation and `WorkSpeedGlobal` multiply into that one and will not match the
 
 ## 3. It was applied once, not twice
 
-The operation is a conditional precisely so that a second mod adding a skill need to this stat
-does not produce two lists, one of which the loader drops in silence.
+The conditional checks whether the **list** `skillNeedFactors` exists. It creates that list
+when absent and appends an entry when present. It does **not** check for an existing Crafting
+entry and does not make the patch safe to apply twice.
 
-- The `Facteurs de compétence` section must list **exactly one** crafting entry.
-- Two entries, or one entry at double the table value, means the conditional took the wrong
-  branch.
-- In a list with no other mod touching this stat, the branch that runs is `nomatch`: vanilla's
-  `GeneralLaborSpeed` carries no `skillNeedFactors` at all, which is checked and true in 1.6.
-- This is the one place load order matters. If a mod that adds a skill need to this stat loads
-  **after** this one, it appends to the list this mod created; if it loads **before**, this mod
-  appends to its list. Either way the count stays one each. A third entry is the failure.
+- With Core and this mod, the `Facteurs de compétence` section must list **exactly one**
+  Crafting entry, at the value in scenario 2. Vanilla has no `skillNeedFactors` on this stat,
+  so the `nomatch` branch runs.
+- To exercise `match` independently of Workshop compatibility, use a temporary test patch
+  loaded before this mod that creates a `skillNeedFactors` list with a neutral Artistic
+  `SkillNeed_BaseBonus` entry (`baseValue` 1, `bonusPerLevel` 0). Expect one Artistic entry at
+  100% and one Crafting entry at the table value, inside one XML list. Remove the fixture
+  after the test. This verifies that an existing list is preserved.
+- In a controlled duplicate test, apply this mod's operation twice to the same definition.
+  Expect one list containing **two** Crafting entries. This is the current patch's limitation,
+  not evidence that the conditional selected the wrong branch. Do not enable the original mod
+  alongside this one for ordinary play.
+- `StatWorker.GetValueUnfinalized`, read from the 1.6 assembly on 2026-09-12, multiplies every
+  entry's factor; the breakdown prints each entry separately. Two identical entries therefore
+  contribute `(0.30 + 0.50 × level)^2`, not twice the factor: 9% at level 0 and 2809% at level
+  10, before other multipliers and final stat limits. The final minimum may mask the 9% result.
+- With another mod, record its entries without this mod, then enable this mod and check that
+  exactly one new Crafting entry appears. Repeat with reversed load order. A mod that creates
+  a list unconditionally, replaces it, or removes it can behave differently; the conditional
+  here cannot guarantee compatibility with those operations.
+
+**Installed Workshop search, completed 2026-09-12.** The local Workshop folder held 9,743
+items. A recursive `rg --no-ignore --hidden --follow` search of XML and C# files for
+`GeneralLaborSpeed` completed with exit code 0 and found 9,108 files. Filtering those files
+for `skillNeedFactors` or `SkillNeed` produced 13 candidates, all parsed and inspected.
+This is a text search of the installed corpus, including old versions, not a search of the
+entire online Workshop or an audit of DLLs without sources. The candidate paths relative to
+Workshop `content/294100` are saved in [_tools/compatibility-candidates.txt](_tools/compatibility-candidates.txt).
+
+Two mods besides the original actively add a Crafting factor to `GeneralLaborSpeed` in their
+installed XML:
+
+| Installed mod | File | Operation and curve | Controlled load-order check |
+|---|---|---|---|
+| DeCore 1.6 (`Daniledman.DeCore`, item 951016023) | `1.6/Patches/Prod9stats.xml` | Unconditional list add; `1 + 0.03 × level` | Before Renew: one list, two Crafting entries; at level 10 their combined contribution is `1.30 × 5.30 = 6.89`. After Renew: two XML lists are created; the stat card must establish what the loader retained. Neither order preserves Renew's curve alone. |
+| Stats Matter(continued) (`StatsMatter.velcroboy333`, item 2208346459) | `Patches/Stats_Pawns_WorkRecipes.xml` | Conditional list creation or replacement; `0.9 + 0.025 × level` | Before Renew: one list, two Crafting entries; at level 10 their combined contribution is `1.15 × 5.30 = 6.095`. After Renew: its replacement removes Renew's entry; expect one Crafting entry at 115% at level 10. |
+
+Both orders were verified offline by applying the actual operations from the three patch files
+to a minimal `GeneralLaborSpeed` definition: the list and entry counts and level-10 factors
+match the table. These are XML-derived expectations, not completed in-game compatibility tests. Test each mod
+separately with Core and its required dependencies, then reverse the order. Do not interpret
+two different Crafting entries as a duplicate application of Renew.
+
+The other candidates do not establish another addition to this stat: the original
+GeniusesCraftFast is already excluded; DeCore's 1.2–1.5 files repeat its patch; Bulk Stonecutting
+(Forked) defines a separate stonecutting stat; Lantern Hunters includes vanilla stat XML in
+its source tree; Gloomy Dragonian race supplies a racial stat value; Hauts' Framework uses
+`GeneralLaborSpeed` as a factor of another stat; Primitive Tools (Continued) defines separate
+work stats and redirects recipes to them. Those recipe redirects can change which jobs
+scenario 6 and scenario 8 exercise, even without adding a skill factor to `GeneralLaborSpeed`.
 
 ## 4. Level 0 reads 30%, not 10%
 

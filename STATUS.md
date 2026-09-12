@@ -12,9 +12,9 @@ showcase:     complete
 tested_on:
 workshop:
 remaining:
-  - unverified: the nine scenarios in TESTING.md, none played
+  - unverified: the nine scenarios in TESTING.md, including DeCore and Stats Matter load-order checks, none played
 session:      local_ee3236c6-0c0c-4486-8420-7ec19ccd2a13
-updated:      2026-09-12, the mod's own session
+updated:      2026-09-12, compatibility search completed and optional load order declared
 ---
 
 # Geniuses Craft Fast Renew — status
@@ -38,8 +38,25 @@ by the thread that holds this mod:
   patch operation and no def of its own, so a patch that lands writes nothing and a patch that
   lands twice writes nothing either. The reading that decides is the skill factor line on a
   colonist's stat card.
+- **Scenario 3 corrected on 2026-09-12:** the conditional preserves an existing
+  `skillNeedFactors` list but does not deduplicate Crafting entries. An offline application of
+  the actual patch XML, with and without a pre-existing neutral Artistic entry, preserves one
+  list and adds one Crafting entry per application. Applying it twice leaves two Crafting
+  entries. The game's `StatWorker` multiplies their factors, as checked in the 1.6 assembly.
+  This documents the current behavior; it does not count as a completed in-game scenario.
+  The installed Workshop search also completed: 9,108 XML/C# files mention this stat, and 13
+  also mention skill needs. Inspection found two overlapping mods besides the excluded
+  original: DeCore 1.6 adds a list unconditionally; Stats Matter(continued) creates or replaces
+  it. Scenario 3 records the expected results in both load orders. These remain in-game tests
+  to perform, and DLL-only changes were not audited.
+  `Mod/About/About.xml` now declares `Daniledman.DeCore` and `StatsMatter.velcroboy333` in
+  `loadAfter` and explains the remaining multiplication of factors in its player-facing
+  description. Both load orders were checked offline using the actual XML operations; the
+  updated About parses successfully and `git diff --check` passes.
 - **`dependencies: none`** — literal here. XML only, no assembly, no framework, no DLC
-  requirement, and the About's `loadAfter` names nothing but Core and the five expansions. The
+  requirement. The About's `loadAfter` also names the optional DeCore and Stats Matter mods:
+  Renew must follow them to preserve its entry in a single list. Their factors still multiply
+  with Renew's, as the About description explains. These are ordering rules, not dependencies. The
   value means the mod needs nothing, as against `declared` when every mod it needs is named in
   the About's `modDependencies`, and `to check` when a non-vanilla `loadAfter` suggests one that
   is not. An undeclared dependency is not cosmetic: on 2026-09-11 Reequilibrage animaux took 47

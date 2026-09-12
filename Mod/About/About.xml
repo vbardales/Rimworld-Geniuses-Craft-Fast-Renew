@@ -17,6 +17,9 @@
     <li>Ludeon.RimWorld.Biotech</li>
     <li>Ludeon.RimWorld.Anomaly</li>
     <li>Ludeon.RimWorld.Odyssey</li>
+    <!-- Add to DeCore's list and preserve our entry after Stats Matter replaces the list. -->
+    <li>Daniledman.DeCore</li>
+    <li>StatsMatter.velcroboy333</li>
   </loadAfter>
   <description>Update of Buitrago's GeniusesCraftFast [1.3] to RimWorld 1.6.
 
@@ -50,6 +53,12 @@ What changed in the 1.6 update
 XML only: no assembly, no dependency, no def of its own. Safe to add to an ongoing game, and safe to remove from one.
 
 Do not run it alongside the original mod.
+
+Load order and compatibility
+
+If you use DeCore or Stats Matter(continued), load this mod after them. This order is declared in the mod metadata: it avoids a second skill-factor list with DeCore and prevents Stats Matter from replacing this mod's factor. Neither mod is required.
+
+Their Crafting factors still multiply with this mod's factor. At Crafting level 10, the combined skill factor is 689% with DeCore alone, or 609.5% with Stats Matter alone, instead of this mod's usual 530%. Load order preserves the factors; it does not remove this stacking. These combinations have been checked in XML but still need testing in game.
 
 Source, changelog and the full list of what the update changed: https://github.com/vbardales/Rimworld-Geniuses-Craft-Fast-Renew
 
