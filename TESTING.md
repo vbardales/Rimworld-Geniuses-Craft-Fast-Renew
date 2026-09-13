@@ -17,6 +17,19 @@ level plus aptitude into 0–20; and `StatWorker` uses `StatDef.noSkillFactor`, 
 
 ---
 
+## Automated XML regression checks
+
+Run `pwsh -NoProfile -File _tools/Test-Patch.ps1` from the repository root. Use `-GameData`
+to select a different RimWorld `Data` directory. The script reads the installed vanilla stat
+and the shipped patch, checks both conditional branches, preserves a pre-existing Artistic
+entry, verifies the seven curve values below, and checks the documented duplicate-application
+behavior. It fails on a missing target or an unexpected XML structure.
+
+This is a standalone XML harness, not RimWorld's patch loader. It does not verify skill
+clamping, disabled skills, mechanoids, stat caching, job speed, or save compatibility. The nine
+manual scenarios below remain necessary. Shared offline checkers additionally verify XML
+classes and references; checks limited to declared defs have little coverage for this mod.
+
 ## Enabling it
 
 No dependency, no framework, no DLC requirement. The About's `loadAfter` names Core, the five

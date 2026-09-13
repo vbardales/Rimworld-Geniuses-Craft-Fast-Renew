@@ -1,4 +1,6 @@
-# Geniuses Craft Fast Renew
+# Geniuses Craft Fast Renew (unofficial)
+
+UNOFFICIAL. This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
 
 A RimWorld 1.6 update of **GeniusesCraftFast** by Buitrago
 ([Steam 2625574564](https://steamcommunity.com/sharedfiles/filedetails/?id=2625574564), 1.3,

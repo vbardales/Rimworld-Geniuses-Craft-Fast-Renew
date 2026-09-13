@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>Geniuses Craft Fast Renew</name>
+  <name>Geniuses Craft Fast Renew (unofficial)</name>
   <author>Buitrago - 1.6 update by nelim</author>
   <packageId>nelim.geniusescraftfastrenew</packageId>
   <url>https://github.com/vbardales/Rimworld-Geniuses-Craft-Fast-Renew</url>
@@ -21,7 +21,9 @@
     <li>Daniledman.DeCore</li>
     <li>StatsMatter.velcroboy333</li>
   </loadAfter>
-  <description>Update of Buitrago's GeniusesCraftFast [1.3] to RimWorld 1.6.
+  <description>UNOFFICIAL. This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
+
+Update of Buitrago's GeniusesCraftFast [1.3] to RimWorld 1.6.
 
 I am not the author of this mod. The idea and the original patch are entirely Buitrago's - all I did was the work needed to make it run on 1.6. Credit goes to them; mistakes in the update are mine. If the original author comes back to it, or asks me to take this down, I will.
 
@@ -60,9 +62,9 @@ If you use DeCore or Stats Matter(continued), load this mod after them. This ord
 
 Their Crafting factors still multiply with this mod's factor. At Crafting level 10, the combined skill factor is 689% with DeCore alone, or 609.5% with Stats Matter alone, instead of this mod's usual 530%. Load order preserves the factors; it does not remove this stacking. These combinations have been checked in XML but still need testing in game.
 
-Source, changelog and the full list of what the update changed: https://github.com/vbardales/Rimworld-Geniuses-Craft-Fast-Renew
-
 The update work was done with the help of an AI assistant (Claude, by Anthropic). Thanks to Buitrago for the mod.
 
-If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.</description>
+If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.
+
+[url=https://github.com/vbardales/Rimworld-Geniuses-Craft-Fast-Renew]Source code on GitHub[/url]</description>
 </ModMetaData>

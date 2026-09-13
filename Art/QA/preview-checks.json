@@ -1,0 +1,167 @@
+{
+  "generatedAt": "2026-09-13T11:26:02.278Z",
+  "version": "1.6",
+  "width": 896,
+  "height": 504,
+  "bytes": 491195,
+  "paletteFile": "Art/preview-palette.json",
+  "fonts": {
+    ".name": [
+      {
+        "familyName": "Segoe UI Semibold",
+        "postScriptName": "SegoeUI-Semibold",
+        "isCustomFont": false,
+        "glyphCount": 19
+      }
+    ],
+    ".suffix": [
+      {
+        "familyName": "Segoe UI Semibold",
+        "postScriptName": "SegoeUI-Semibold",
+        "isCustomFont": false,
+        "glyphCount": 5
+      }
+    ],
+    ".tag": [
+      {
+        "familyName": "Segoe UI",
+        "postScriptName": "SegoeUI",
+        "isCustomFont": false,
+        "glyphCount": 12
+      }
+    ],
+    ".summary": [
+      {
+        "familyName": "Segoe UI",
+        "postScriptName": "SegoeUI",
+        "isCustomFont": false,
+        "glyphCount": 72
+      }
+    ],
+    ".version": [
+      {
+        "familyName": "Segoe UI",
+        "postScriptName": "SegoeUI-Bold",
+        "isCustomFont": false,
+        "glyphCount": 3
+      }
+    ]
+  },
+  "layout": {
+    ".name": {
+      "text": "Geniuses Craft Fast",
+      "rects": [
+        {
+          "x": 50,
+          "y": 48,
+          "width": 396.578125,
+          "height": 62
+        }
+      ],
+      "fontSize": "46px",
+      "color": "rgb(242, 236, 225)"
+    },
+    ".suffix": {
+      "text": "Renew",
+      "rects": [
+        {
+          "x": 50,
+          "y": 116.59375,
+          "width": 89.65625,
+          "height": 40
+        }
+      ],
+      "fontSize": "29.9px",
+      "color": "rgb(221, 180, 119)"
+    },
+    ".tag": {
+      "text": "(unofficial)",
+      "rects": [
+        {
+          "x": 50,
+          "y": 160.1875,
+          "width": 113.875,
+          "height": 32
+        }
+      ],
+      "fontSize": "24px",
+      "color": "rgb(221, 180, 119)"
+    },
+    ".summary": {
+      "text": "Crafting skill drives general labor speed. Ten times vanilla at level 20.",
+      "rects": [
+        {
+          "x": 50,
+          "y": 229.578125,
+          "width": 406.8125,
+          "height": 28
+        },
+        {
+          "x": 50,
+          "y": 260.015625,
+          "width": 218.953125,
+          "height": 28
+        }
+      ],
+      "fontSize": "21px",
+      "color": "rgb(242, 236, 225)"
+    },
+    ".version": {
+      "text": "1.6",
+      "rects": [
+        {
+          "x": 843.9087524414062,
+          "y": 1.2016509771347046,
+          "width": 50.88958740234375,
+          "height": 50.889591217041016
+        }
+      ],
+      "fontSize": "26px",
+      "color": "rgb(23, 18, 14)"
+    },
+    ".rule": {
+      "text": "",
+      "rects": [],
+      "fontSize": "16px",
+      "color": "rgb(242, 236, 225)"
+    },
+    "h1": {
+      "text": "Geniuses Craft Fast Renew",
+      "rects": [
+        {
+          "x": 50,
+          "y": 48,
+          "width": 396.578125,
+          "height": 62
+        },
+        {
+          "x": 50,
+          "y": 48,
+          "width": 396.578125,
+          "height": 62
+        },
+        {
+          "x": 50,
+          "y": 116.59375,
+          "width": 89.65625,
+          "height": 40
+        },
+        {
+          "x": 50,
+          "y": 116.59375,
+          "width": 89.65625,
+          "height": 40
+        }
+      ],
+      "fontSize": "46px",
+      "color": "rgb(242, 236, 225)"
+    }
+  },
+  "contrasts": {
+    ".name": 11.375175217219455,
+    ".suffix": 7.250006662351988,
+    ".tag": 7.250006662351988,
+    ".summary": 5.3924343799752865,
+    "badge": 5.142047090958049
+  }
+}
