@@ -10,7 +10,7 @@ visibility:   public
 detached:     yes
 stage:        done
 licence:      silent
-update_licence: MIT, update work only; see LICENSE
+adaptation_licence: MIT, adaptation work only; see LICENSE
 licence_at:   three places, the About description among them
 dependencies: none
 showcase:     complete
@@ -119,7 +119,7 @@ exist. Root and shipped LICENSE/ATTRIBUTION copies match by SHA-256. The install
 Workshop item 2625574564 declares only 1.3 and contains no licence file or permission in
 its About description, supporting the recorded `silent` classification under the workflow.
 The existing public/silent decision, attribution and takedown commitment are preserved;
-MIT explicitly covers only update work. This is not a grant of upstream permission.
+MIT explicitly covers only adaptation work. This is not a grant of upstream permission.
 Live Steam comments/permission changes were not rechecked; the existing rights record
 and inspected source are the basis of this audit, not a new claim of consent.
 
@@ -206,7 +206,7 @@ Audit on 2026-09-12:
   does not validate the patch. The dedicated regression script supplies the patch coverage.
 - GitHub: the repository URL is present both in About.xml's `url` and in its description.
 - Licence: `licence: silent` describes the original Buitrago mod's undeclared licence.
-  The update's own work is under **MIT**, copyright 2026 Nelim, as scoped by `LICENSE` and
+  The adaptation's own work is under **MIT**, copyright 2026 Nelim, as scoped by `LICENSE` and
   the identical shipped `Mod/LICENSE`. This does not relicense the original author's work.
 
 A status sheet, read by a sweep over every mod rather than by asking each thread one at a time.
@@ -266,7 +266,7 @@ Steam description says nothing about reuse, and it has been abandoned since 11 O
 still online, no continuation on the Workshop. `licence_at` counts where that is written down:
 `ATTRIBUTION.md`'s Licence section, the README's Credit paragraph, and the mod's own description,
 which is the one Buitrago would ever see. `<incompatibleWith>` names `Buitrago.GeniusesCraftFast`
-and does not move — it is the original's identifier, not this update's.
+and does not move — it is the original's identifier, not this adaptation's.
 
 `showcase: complete` since 2026-09-12: `Mod/About/Preview.png` at 896 × 504 and
 `Mod/About/ModIcon.png` at 128 × 128, both built from the full-resolution sources in `Art/` by

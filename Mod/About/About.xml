@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>Geniuses Craft Fast Renew (unofficial)</name>
-  <author>Buitrago - 1.6 update by Nelim</author>
+  <author>Buitrago - adapted by Nelim for 1.6</author>
   <packageId>nelim.geniusescraftfastrenew</packageId>
   <url>https://github.com/vbardales/Rimworld-Geniuses-Craft-Fast-Renew</url>
   <supportedVersions>
@@ -23,9 +23,9 @@
   </loadAfter>
   <description>UNOFFICIAL. This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
 
-Update of Buitrago's GeniusesCraftFast [1.3] to RimWorld 1.6.
+Adaptation of Buitrago's GeniusesCraftFast [1.3] to RimWorld 1.6.
 
-I am not the author of this mod. The idea and the original patch are entirely Buitrago's - all I did was the work needed to make it run on 1.6. Credit goes to them; mistakes in the update are mine. If the original author comes back to it, or asks me to take this down, I will.
+I am not the author of this mod. The idea and the original patch are entirely Buitrago's - all I did was the work needed to make it run on 1.6. Credit goes to them; mistakes in the adaptation are mine. If the original author comes back to it, or asks me to take this down, I will.
 
 Original mod: https://steamcommunity.com/sharedfiles/filedetails/?id=2625574564
 
@@ -41,13 +41,13 @@ The factor is 0.30 + 0.50 per crafting level:
 - level 10: 530%
 - level 20: 1030%
 
-Levels 0 and 1 are slower than vanilla; from level 2 on it is a straight gain, and a master crafter works about ten times faster. A colonist who never crafts stays at level 0, so 30% of vanilla speed on every general-labor job - including sculpting, which is the artist's work and not the crafter's. That trade is the mod, and the update keeps its numbers exactly.
+Levels 0 and 1 are slower than vanilla; from level 2 on it is a straight gain, and a master crafter works about ten times faster. A colonist who never crafts stays at level 0, so 30% of vanilla speed on every general-labor job - including sculpting, which is the artist's work and not the crafter's. That trade is the mod, and the adaptation keeps its numbers exactly.
 
 On 1.6 the stat covers stone blocks, chemfuel, components, patchleather, smelting slag, cremation, tailoring apparel, smithing weapons, sculpting art, building musical instruments and crafting shells. Royalty, Ideology, Biotech, Anomaly and Odyssey each add their own recipes and workbenches on the same stat, and they pick the bonus up on their own.
 
 Mechanoids are unaffected. They have no skills, and the game applies the stat's no-skill factor to them instead of any skill need.
 
-What changed in the 1.6 update
+What changed in the 1.6 adaptation
 
 - The patch no longer assumes it is alone. GeneralLaborSpeed has no skill needs in vanilla, so the list has to be created; the original created it unconditionally, which writes a second list if another mod got there first. It now adds to an existing list when it finds one, and creates the list only when there is none.
 - Nothing else needed changing. The stat, the SkillNeed_BaseBonus class and the patch operations all crossed 1.3 to 1.6 intact - the stat's description in 1.6 is still word for word the one Buitrago quoted in 2021. Checked against RimWorld 1.6.4871.
@@ -62,7 +62,7 @@ If you use DeCore or Stats Matter(continued), load this mod after them. This ord
 
 Their Crafting factors still multiply with this mod's factor. At Crafting level 10, the combined skill factor is 689% with DeCore alone, or 609.5% with Stats Matter alone, instead of this mod's usual 530%. Load order preserves the factors; it does not remove this stacking. These combinations have been checked in XML but still need testing in game.
 
-The update work was done with the help of an AI assistant (Claude, by Anthropic). Thanks to Buitrago for the mod.
+The adaptation work was done with the help of an AI assistant (Claude, by Anthropic). Thanks to Buitrago for the mod.
 
 If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.
 

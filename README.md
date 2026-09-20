@@ -2,7 +2,7 @@
 
 UNOFFICIAL. This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
 
-A RimWorld 1.6 update of **GeniusesCraftFast** by Buitrago
+A RimWorld 1.6 adaptation of **GeniusesCraftFast** by Buitrago
 ([Steam 2625574564](https://steamcommunity.com/sharedfiles/filedetails/?id=2625574564), 1.3,
 last updated 11 October 2021).
 
@@ -27,10 +27,10 @@ Do not run it alongside the original mod; `<incompatibleWith>` declares the clas
       Patches/GeneralLaborSpeed.xml    the whole mod
       LICENSE, ATTRIBUTION.md          copies: Steam ships the folder, not the repo
     Art/                               full-resolution image sources, never published
-    ATTRIBUTION.md                     what is Buitrago's, what the update changed
+    ATTRIBUTION.md                     what is Buitrago's, what the adaptation changed
     CHANGELOG.md                       release notes
     TESTING.md                         what the first run in game has to settle
-    LICENSE                            MIT, over the update work only
+    LICENSE                            MIT, over the adaptation work only
 
 ## Testing it
 
@@ -47,5 +47,5 @@ change one branch only and the mod behaves differently depending on which other 
 
 ## Credit
 
-The mod is Buitrago's. The update is mine, and so is any mistake in it. If the original author
+The mod is Buitrago's. The adaptation is mine, and so is any mistake in it. If the original author
 returns to it or asks for this to come down, it comes down.

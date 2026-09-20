@@ -8,15 +8,15 @@ it in game.
 
 On release: create the `v1.0.0` tag and the matching GitHub release.
 
-First release of the 1.6 update of Buitrago's **GeniusesCraftFast [1.3]**, last updated
-11 October 2021. The mod is two files and one patch operation; the update is small by nature,
+First release of the 1.6 adaptation of Buitrago's **GeniusesCraftFast [1.3]**, last updated
+11 October 2021. The mod is two files and one patch operation; the adaptation is small by nature,
 and most of the work was checking that it did not need to be larger.
 
 ### Added
 
 - Support for RimWorld 1.6. Checked against 1.6.4871.
-- `LICENSE`, MIT over the update work alone.
-- `ATTRIBUTION.md` and this changelog, recording what the original does and what the update
+- `LICENSE`, MIT over the adaptation work alone.
+- `ATTRIBUTION.md` and this changelog, recording what the original does and what the adaptation
   touched.
 
 ### Changed
