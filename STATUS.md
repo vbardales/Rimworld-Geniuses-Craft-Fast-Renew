@@ -206,7 +206,7 @@ Audit on 2026-09-12:
   does not validate the patch. The dedicated regression script supplies the patch coverage.
 - GitHub: the repository URL is present both in About.xml's `url` and in its description.
 - Licence: `licence: silent` describes the original Buitrago mod's undeclared licence.
-  The update's own work is under **MIT**, copyright 2026 nelim, as scoped by `LICENSE` and
+  The update's own work is under **MIT**, copyright 2026 Nelim, as scoped by `LICENSE` and
   the identical shipped `Mod/LICENSE`. This does not relicense the original author's work.
 
 A status sheet, read by a sweep over every mod rather than by asking each thread one at a time.
