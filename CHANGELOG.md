@@ -27,7 +27,9 @@ and most of the work was checking that it did not need to be larger.
   with two such nodes, one of them silently dropped at load. A `PatchOperationConditional` now
   appends to an existing list, and creates the list only when there is none.
 - **`packageId`** is `nelim.geniusescraftfast`, with `<incompatibleWith>` on
-  `Buitrago.GeniusesCraftFast` so the two cannot run together.
+  `Buitrago.GeniusesCraftFast` so the two cannot run together. The private `0.1.0` item was
+  created with `nelim.geniusescraftfastrenew`; the `renew` suffix is dropped before the first
+  public release, which is safe because that item was never public.
 - **`Patches/Patch.xml` renamed `Mod/Patches/GeneralLaborSpeed.xml`**, after what it patches.
 
 ### Notes
@@ -39,3 +41,13 @@ DLCs keep adding recipes to it — are documented in `ATTRIBUTION.md` rather tha
 Nothing in the 1.3 → 1.6 gap touched this mod: the stat, its lack of a vanilla skill need, the
 `SkillNeed_BaseBonus` class and the `skillNeedFactors` field all survived unchanged, and the
 stat's in-game description is still word for word the one quoted in the 2021 description.
+
+## [0.1.0] — 2026-09-23
+
+Creates the Workshop item (publishIdFile). Steam creates every item as private, and this one
+stays private until the `1.0.0` release.
+
+This upload contained `Mod/` exactly as it stood at commit `5a243fc`, and nothing else changed
+since then apart from the `packageId`, which lost its `renew` suffix on 2026-09-28 (see `1.0.0`).
+The commit that adds `Mod/About/PublishedFileId.txt` is the commit of this version. It says
+nothing about the mod being public or tested.
