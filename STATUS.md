@@ -19,7 +19,7 @@ tested_on:
 workshop:     3806761999 (private item created by the 0.1.0 upload of 2026-09-23; PublishedFileId.txt committed in 1692def)
 remaining:
   - unverified: the six features of Tests/Pickle never ran: 01-03 in the minimal pass, 05 with Stats Matter, 04 with DeCore, 06 with the original mod
-  - unverified: the DeCore pass cannot stage, item 951016023 is not on the machine (subscribe to it or download it first)
+  - unverified: the DeCore pass has not run: item 951016023 was fetched into the WSL cache by steamcmd on 2026-09-28 (packageId Daniledman.DeCore, 1.6 patches present) and the request 20260928-165356-940-7286 is queued
   - unverified: the assumptions listed in Tests/Pickle/README.md (neutral generated colonist, a readable skillNeedFactors.Count, a constructoid reading 1, the 1.3-only original kept by the staging)
   - feature: PUBLICATION.md (Steam description block, 1.0.0 change note, gallery order, thank-you drafts) is required before tested -> prepublished; the thank-you register has no row yet for the original, DeCore and Stats Matter
 session:      local_ee3236c6-0c0c-4486-8420-7ec19ccd2a13

@@ -65,7 +65,7 @@ On top of the general gate of `AUDIT.md`, step 9. All must hold for the revision
 - **Every conditional scenario has run.** `04`, `05` and `06` carry `@requires`, so they are skipped in the
   minimal pass and count as skipped there. Each has its own pass, with the map that mounts the other mod, and
   its report was read: the suite name and the scenario names checked before citing it, because the report folder
-  is shared by the whole machine. **The DeCore pass is blocked** until item 951016023 is on the machine.
+  is shared by the whole machine. The DeCore pass is filed too: item 951016023 was fetched into the WSL cache with steamcmd on 2026-09-28, the Steam client never received it.
 - **No manual test left.** The table above is the whole list; a row that turns out to need a person goes back
   to `unverified`.
 - **The minimal pass shows three features played of six found**, `exitReason` read first, and a `Player.log`
