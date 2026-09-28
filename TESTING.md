@@ -26,9 +26,55 @@ entry, verifies the seven curve values below, and checks the documented duplicat
 behavior. It fails on a missing target or an unexpected XML structure.
 
 This is a standalone XML harness, not RimWorld's patch loader. It does not verify skill
-clamping, disabled skills, mechanoids, stat caching, job speed, or save compatibility. The nine
-manual scenarios below remain necessary. Shared offline checkers additionally verify XML
+clamping, disabled skills, mechanoids, stat caching, job speed, or save compatibility. What
+needs the game is now a Pickle suite, next section. Shared offline checkers additionally verify XML
 classes and references; checks limited to declared defs have little coverage for this mod.
+
+Rerun on 2026-09-28 against RimWorld 1.6.4871, all green: `_tools/Test-Patch.ps1` (both branches),
+`Check-XmlFields`, `Check-XmlClasses`, `Check-TypeRefs`, `Check-DefRefs`, `Check-ConfigErrors` (0 of 0
+defs, which proves nothing about the patch), and `git diff --check`.
+
+## Automated in-game scenarios (Pickle)
+
+The suite is in `Tests/Pickle/` (six features, stock steps only, four passes) and is **written, never
+run**. Its `README.md` says what each feature shows, what stays out of Gherkin and why, the passes and their
+commands, and the assumptions the first run will confirm or break. Every request goes to the dispatcher
+with `Submit-PickleRun.ps1`, never `Run-PickleWsl.ps1` and never the Windows game.
+
+How each of the nine scenarios below is covered. Nothing is left to tick by hand: each one is automated,
+or listed not applicable with its reason.
+
+| Scenario | Covered by | Note |
+|---|---|---|
+| 1. The patch landed | `01-patch-lands`, `02-curve` | Def patched by this mod, one skill need, and the value on a colonist |
+| 2. The number is Buitrago's | `02-curve` | Seven levels, 0.3 to 10.3 |
+| 3. Applied once, not twice | `01-patch-lands` (count 1), `04`, `05` and `06` (count 2 with another mod) | The `match` branch and the double application are `_tools/Test-Patch.ps1`, offline |
+| 4. Level 0 reads 30%, not 10% | `02-curve`, level 0 | |
+| 5. The clamp at 20 | not applicable | The clamp is `SkillRecord.GetLevel`, the engine's; the mod's own edge, level 20, is in `02-curve` |
+| 6. A colonist who cannot craft | not applicable | `GetLevel` returns 0 for a disabled skill, the engine's, and level 0 of `02-curve` is that same number. The recipes riding the stat are facts of the vanilla defs, read from them |
+| 7. Mechanoids and animals | `03-mechanoid` | Needs Biotech, on in the minimal set |
+| 8. It speeds up actual work | not applicable | The job divides the work by the stat: vanilla arithmetic on a value `02-curve` asserts. A ratio of two durations needs a local step that Pickle has no assertion for |
+| 9. Save compatibility, both directions | added to a colony: `02-curve` (the fixture colony was saved without this mod). Removed from one: not applicable | The mod owns no def and stores nothing in a save, so nothing can go missing; what a removed mod leaves is the engine's |
+
+### What `tested` requires, for this mod
+
+On top of the general gate of `AUDIT.md`, step 9. All must hold for the revision now in the repository:
+
+- **No scenario tagged `@wip`.** There is none today. A scenario put aside is repaired and replayed, or deleted with
+  its reason written here.
+- **Every conditional scenario has run.** `04`, `05` and `06` carry `@requires`, so they are skipped in the
+  minimal pass and count as skipped there. Each has its own pass, with the map that mounts the other mod, and
+  its report was read: the suite name and the scenario names checked before citing it, because the report folder
+  is shared by the whole machine. **The DeCore pass is blocked** until item 951016023 is on the machine.
+- **No manual test left.** The table above is the whole list; a row that turns out to need a person goes back
+  to `unverified`.
+- **The minimal pass shows three features played of six found**, `exitReason` read first, and a `Player.log`
+  read from the start, not only `no errors were logged`.
+- **A scenario red on an assumption of the README** (a non-neutral colonist, a count that cannot be read, a mech
+  whose factors are not all 1) is a fixture or expectation to correct and replay, not a defect of the mod. A red
+  that survives is a defect.
+- English and French are not passes here: the mod adds no text.
+- Evidence is kept as `Tests/Pickle/README.md` says, one line per run in `docs/runs/README.md`.
 
 ## Enabling it
 
@@ -41,8 +87,9 @@ multiply with Renew's; see scenario 3.
 nelim.geniusescraftfast       this mod            check overlaps in scenario 3
 ```
 
-It is already active: line 24 of `ModsConfig.xml`, checked on 2026-09-12. Empty `Player.log`
-before the run so the paste is only about this one.
+It is **not** in the current `ModsConfig.xml` (checked 2026-09-28; the file lists 192 mods and none is this
+one). `RimWorld/Mods/GeniusesCraftFastRenew` is a junction to `Mod/`. The Pickle staging writes its own
+`ModsConfig.xml`, so the suite needs nothing enabled by hand; enable it in the game only for a look of your own.
 
 ## What to search the log for
 

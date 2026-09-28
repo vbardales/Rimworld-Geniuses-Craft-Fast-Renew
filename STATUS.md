@@ -9,23 +9,91 @@ repo:         Rimworld-Geniuses-Craft-Fast-Renew
 visibility:   public
 detached:     yes
 stage:        done
+workflow_stage: done
 licence:      silent
 adaptation_licence: MIT, adaptation work only; see LICENSE
 licence_at:   three places, the About description among them
 dependencies: none
 showcase:     complete
 tested_on:
-workshop:
+workshop:     3806761999 (private item created by the 0.1.0 upload of 2026-09-23; PublishedFileId.txt committed in 1692def)
 remaining:
-  - unverified: the nine scenarios in TESTING.md, including DeCore and Stats Matter load-order checks, none played
-  - unverified: final in-game logs and English/French stat UI checks
+  - unverified: the six features of Tests/Pickle never ran: 01-03 in the minimal pass, 05 with Stats Matter, 04 with DeCore, 06 with the original mod
+  - unverified: the DeCore pass cannot stage, item 951016023 is not on the machine (subscribe to it or download it first)
+  - unverified: the assumptions listed in Tests/Pickle/README.md (neutral generated colonist, a readable skillNeedFactors.Count, a constructoid reading 1, the 1.3-only original kept by the staging)
+  - feature: PUBLICATION.md (Steam description block, 1.0.0 change note, gallery order, thank-you drafts) is required before tested -> prepublished; the thank-you register has no row yet for the original, DeCore and Stats Matter
 session:      local_ee3236c6-0c0c-4486-8420-7ec19ccd2a13
-updated:      2026-09-13, presentation defects corrected and verified; done, in-game validation pending
+updated:      2026-09-28, audited by the mod's own session; done kept, Pickle suite written, in-game validation pending
 ---
 
 # Geniuses Craft Fast Renew — status
 
+## Audit 2026-09-28 — done kept
+
+**Previous stage `done` -> retained `done`** (`workflow_stage: done`; `stage` codes: `showcase` covers Preview
+générée to l10n, `preTest`, `done`, `tested`, `published`). No gate failed, so nothing moves down.
+
+Audited revision: `60e1749`, standalone repository, `origin/main` in step. Working tree at the time: `TESTING.md`
+modified, `Tests/` and `docs/` untracked (written in this session), nothing else. Protocols read and their versions:
+`docs/PROTOCOLS-READ.md`.
+
+| Transition | Result and evidence |
+| --- | --- |
+| dansMonoRepo -> horsMonoRepo | Validated. Own `.git`, one remote, public repository, `STATUS.md`, English documentation. packageId `nelim.geniusescraftfast` without `renew` (changed today, see below), folder and repository keep it. Licence `silent`, `(unofficial)` suffix and `UNOFFICIAL` opening paragraph present. **No upstream repository exists** for the original: Steam page and `About.xml` link to none, a GitHub search finds only this adaptation; recorded in `ATTRIBUTION.md`, so there is nothing to base on or send pull requests to |
+| horsMonoRepo -> ModIcon générée | Validated, unchanged: `Mod/About/ModIcon.png` 128 x 128, 19,588 bytes. Not judged again, not generated; the owner alone generates icons |
+| ModIcon générée -> Preview générée | Validated, unchanged: `Mod/About/Preview.png` 896 x 504, 491,195 bytes, SHA-256 identical to the 2026-09-13 record |
+| Preview générée -> preOptions | Validated. Description in English, opens with the `UNOFFICIAL` paragraph, ends with `[url=...]Source code on GitHub[/url]` on the repository of `<url>` and `origin`. The 2026-09-13 correction still holds |
+| preOptions -> options | `settings_audit: not_applicable`, still valid against `MOD_SETTINGS.md` of `b83933b`: no page, no shortcut, no option, and the fixed curve is the mod's purpose |
+| options -> l10n | `not_applicable` for the three fields, still valid against `TRANSLATIONS.md` of `f5c2d9d`: the mod adds no text and no number reaches a key, so the plural rule of 2026-09-25 has nothing to apply to |
+| l10n -> preTest | Cited from the audit of 2026-09-13 (below), still true: only vanilla operations and classes, no mandatory dependency, `loadAfter` names Core, the five DLCs and the optional DeCore and Stats Matter. Nothing in `About.xml` changed but the packageId |
+| preTest -> done | **Validated.** Automated and XML tests rerun today, green (list below). The Pickle suite is now **written**, and what stays out of Gherkin is justified in `Tests/Pickle/README.md`. The earlier state had no `Tests/Pickle/` and no sentence saying why, which `AUDIT.md` step 12 does not accept; this session wrote it, so `done` is kept rather than lost |
+| done -> tested | Not verified, nothing run in game. Requirements for this mod are in `TESTING.md`, "What `tested` requires" |
+
+### Controls run on 2026-09-28, RimWorld 1.6.4871
+
+- `_tools/Test-Patch.ps1`: both conditional branches pass, existing list preserved, curve, repeated application.
+- `Check-XmlFields`: 2 files, no unknown field. `Check-XmlClasses`: 3 references, all resolve. `Check-TypeRefs`: no
+  unguarded third-party type. `Check-DefRefs`: well-formed, no unresolved reference or parent.
+  `Check-ConfigErrors`: 0 of 0 defs, which proves nothing about the patch. `git diff --check`: clean.
+- `About.xml` parses; description opening and closing lines checked as text.
+- Both `ATTRIBUTION.md` copies identical (`cmp`). `Mod/` holds no `.dds`, no `.ico`, no `Preview.ico`; no `.dds` is
+  tracked in the repository.
+- Not run, and not claimed: any in-game scenario, any `Player.log`, any Pickle request.
+
+### Changes made in this session
+
+- packageId `nelim.geniusescraftfastrenew` -> `nelim.geniusescraftfast`, at the owner's word, after the private `0.1.0`
+  item existed. Safe because that item was never public and no save names the old id. `ModsConfig.xml` no longer lists
+  this mod at all.
+- `CHANGELOG.md` opens with `## [0.1.0]`, the creation of the Workshop item, and `PublishedFileId.txt` is committed
+  (`1692def`). The upload was `Mod/` exactly as at `5a243fc`, which differs from now only by the packageId.
+- `.gitignore`: `*.dds`, `Tests/Pickle/Evidence/`, `evidence/`, `desktop.ini`, `Art/*.ico`, `Thumbs.db`. Nothing was
+  tracked under those names.
+- `ATTRIBUTION.md` (both copies): no source repository for the original.
+- `Tests/Pickle/` (six features, four passes, stock steps, no local C#), `docs/runs/README.md`, `docs/PROTOCOLS-READ.md`,
+  and the mapping of the nine scenarios in `TESTING.md`.
+
+### Findings, none of them a defect
+
+- **A mod that inherits from the stat.** De-generalize Work (`Alias.DegeneralizeWork`, 2011655761, 1.6) gives
+  `GeneralLaborSpeed` a `Name` attribute and defines three stats with `ParentName="GeneralLaborSpeed"` that declare no
+  `skillNeedFactors` of their own. Patches run before inheritance, so those three stats would inherit this mod's Crafting
+  entry. Read from the files; **not tested and not in the suite**. It needs Vanilla Skills Expanded, and neither mod is
+  active now. Worth a pass only if the owner runs both.
+- The 2026-09-12 corpus search found 13 candidates and two that add a Crafting factor (DeCore, Stats Matter). Redone
+  on 2026-09-28 with `scripts/Search-Workshop.sh` (two earlier hand-rolled walks of mine were stopped, see
+  `docs/PROTOCOLS-READ.md`): 6,163 XML files mention the stat, and 8 of them also mention `skillNeedFactors`. They are
+  this mod (its own Workshop item and the junction), Stats Matter, the original, and four already in
+  `_tools/compatibility-candidates.txt` that write no factor (a redefinition of the stat in `2594241153`, the source
+  tree of `2866414675`, `3751288694`'s redirect of recipes). No new mod writes a Crafting factor. DeCore is not
+  installed, so it was not part of this search.
+- `Mod/desktop.ini` exists on disk, hidden, ignored by git. Steam sends `Mod/` as it stands when the upload is made
+  from the game, but the CI ships the tracked files only. Nothing to do while publication goes by CI.
+
 ## Presentation corrections and current stage — 2026-09-13
+
+**Replaced on 2026-09-28 by the audit above; kept as history.**
+
 
 `Preview générée` -> `done`: the presentation gate now passes. Settings, localization,
 dependency and offline-test validations from the audit below remain applicable; none of
