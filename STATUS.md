@@ -19,12 +19,12 @@ showcase:     complete
 tested_on:
 workshop:     3806761999 (private item created by the 0.1.0 upload of 2026-09-23; PublishedFileId.txt committed in 1692def)
 remaining:
-  - unverified: the six features of Tests/Pickle never ran: 01-03 in the minimal pass, 05 with Stats Matter, 04 with DeCore, 06 with the original mod
-  - unverified: the DeCore pass has not run: item 951016023 was fetched into the WSL cache by steamcmd on 2026-09-28 (packageId Daniledman.DeCore, 1.6 patches present) and the request 20260928-165356-940-7286 is queued
-  - unverified: the assumptions listed in Tests/Pickle/README.md (neutral generated colonist, a readable skillNeedFactors.Count, a constructoid reading 1, the 1.3-only original kept by the staging)
+  - unverified: 01-patch-lands and 03-mechanoid must be replayed in the minimal pass; both failed on 2026-09-28 for a wrong expectation in the scenario (fixed same day, not yet rerun), not a mod defect
+  - unverified: 02-curve, 04-decore, 05-statsmatter and 06-original-incompatible passed on 2026-09-28 but are not yet re-confirmed against the two fixed scenarios' sibling run
+  - unverified: French UI is not exercised by this suite; the mod adds no text, so localization stays not_applicable, but no French pass was run either
   - feature: PUBLICATION.md (Steam description block, 1.0.0 change note, gallery order, thank-you drafts) is required before tested -> prepublished; the thank-you register has no row yet for the original, DeCore and Stats Matter
 session:      local_ee3236c6-0c0c-4486-8420-7ec19ccd2a13
-updated:      2026-09-28, audited by the mod's own session; done kept, Pickle suite written, in-game validation pending
+updated:      2026-09-28, first Pickle runs read: 4/6 features green, 2 fixed and pending replay
 ---
 
 # Geniuses Craft Fast Renew — status
@@ -90,6 +90,31 @@ modified, `Tests/` and `docs/` untracked (written in this session), nothing else
   installed, so it was not part of this search.
 - `Mod/desktop.ini` exists on disk, hidden, ignored by git. Steam sends `Mod/` as it stands when the upload is made
   from the game, but the CI ships the tracked files only. Nothing to do while publication goes by CI.
+
+## First Pickle run, 2026-09-28
+
+Four requests, deposited against `aa5f14b`, all read. See `docs/runs/README.md` for the one-line log and
+`Tests/Pickle/Evidence/` for the reports kept.
+
+| Pass | Result | Note |
+|---|---|---|
+| minimal | 7 passed, 2 failed, 3 skipped of 12 discovered | The two failures are scenario defects, not mod defects (below). The three "skipped" scenarios (`04`, `05`, `06`, gated by `@requires`) did run and pass in their own passes; this report's own "skipped" count is right for what ran under it |
+| avec-statsmatter | 1/1 passed | Two entries confirmed, product 6.095 at crafting 10 |
+| incompat-original | 1/1 passed | The original loaded with a version-mismatch warning, not dropped: `Player.log` lists `Buitrago.GeniusesCraftFast (incompatible version)` among the active mods, not among any dropped list. Two entries confirmed, product 28.09 |
+| avec-decore | 1/1 passed | `Daniledman.DeCore` loaded with no warning, confirmed in `Player.log`. Two entries, product 6.89 |
+
+**`01-patch-lands` failed**: `def "GeneralLaborSpeed" was patched by mod "nelim.geniusescraftfast"` does not match, because
+that step compares the mod's **display name**, not its packageId (confirmed by the failure message, which named
+`Geniuses Craft Fast Renew (unofficial)`). The patch itself landed correctly; only the assertion's string was wrong.
+Fixed in the feature file the same day.
+
+**`03-mechanoid` failed**: expected `GeneralLaborSpeed` at 1 on a constructoid, actual 0.5. Vanilla gives every
+mechanoid a `WorkSpeedGlobal` penalty with no Mechanitor work precept (`Biotech/Defs/HediffDefs/Hediffs_Mechanitor.xml`);
+`noSkillFactor` (1) is not the same number as the finished stat, which was the wrong reading in the original
+scenario. The stat card carried no Crafting line in that run, which is the actual point of the scenario. Fixed the
+expected value to 0.5, with the reasoning in the feature file.
+
+Neither failure is a defect of the mod: both are corrected in `Tests/Pickle/Mod/Pickle/Features/`, not yet replayed.
 
 ## Presentation corrections and current stage — 2026-09-13
 

@@ -63,17 +63,20 @@ On top of the general gate of `AUDIT.md`, step 9. All must hold for the revision
 - **No scenario tagged `@wip`.** There is none today. A scenario put aside is repaired and replayed, or deleted with
   its reason written here.
 - **Every conditional scenario has run.** `04`, `05` and `06` carry `@requires`, so they are skipped in the
-  minimal pass and count as skipped there. Each has its own pass, with the map that mounts the other mod, and
-  its report was read: the suite name and the scenario names checked before citing it, because the report folder
-  is shared by the whole machine. The DeCore pass is filed too: item 951016023 was fetched into the WSL cache with steamcmd on 2026-09-28, the Steam client never received it.
+  minimal pass and count as skipped there. **Done on 2026-09-28**: all three ran in their own pass and passed —
+  `04-decore` (DeCore fetched into the WSL cache with steamcmd, the Steam client never received it), `05-statsmatter`,
+  `06-original-incompatible` (the original loaded with a version-mismatch warning, not dropped; see `STATUS.md`).
 - **No manual test left.** The table above is the whole list; a row that turns out to need a person goes back
   to `unverified`.
 - **The minimal pass shows three features played of six found**, `exitReason` read first, and a `Player.log`
-  read from the start, not only `no errors were logged`.
+  read from the start, not only `no errors were logged`. **Done on 2026-09-28**: `exitReason: passed`, 7 passed,
+  2 failed, 3 skipped of 12 scenarios in 3 features played (`01-patch-lands`, `02-curve`, `03-mechanoid`).
 - **A scenario red on an assumption of the README** (a non-neutral colonist, a count that cannot be read, a mech
   whose factors are not all 1) is a fixture or expectation to correct and replay, not a defect of the mod. A red
-  that survives is a defect.
-- English and French are not passes here: the mod adds no text.
+  that survives is a defect. **Both reds of the first run were exactly this**: `01-patch-lands` named the mod by
+  packageId where the step matches its display name, and `03-mechanoid` expected 1 where vanilla gives a
+  constructoid 0.5 with no Mechanitor work precept. Both fixed in the feature files; **not yet replayed**.
+- English and French are not passes here: the mod adds no text. No French pass has run either.
 - Evidence is kept as `Tests/Pickle/README.md` says, one line per run in `docs/runs/README.md`.
 
 ## Enabling it
