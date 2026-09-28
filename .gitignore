@@ -13,3 +13,20 @@
 
 # Local asset-rendering dependencies
 _tools/node_modules/
+
+# System.
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Local Windows folder icons: a derived copy of Preview.png for the Explorer, never published.
+Art/*.ico
+
+# RimWorld converts every PNG to a .dds next to it the first time the game loads the mod.
+# Never tracked, and Steam must not ship them either.
+*.dds
+
+# Pickle's -EvidenceDir target. Proof kept on disk for the session that reads it, not in git:
+# screenshots and Player.log grow without limit. One text line per run goes in docs/runs/.
+Tests/Pickle/Evidence/
+evidence/
