@@ -1,0 +1,10 @@
+# Pass "incompat-original": the mod's one declared incompatibility, mounted to look at the symptom.
+#
+# Buitrago.GeniusesCraftFast, Workshop 2625574564, the mod this one adapts. About.xml declares it in
+# incompatibleWith. Its patch adds a skillNeedFactors list unconditionally with the same 0.30 + 0.50 x level, so
+# with both loaded the Crafting factor is applied twice: two entries, and at crafting 10 it reads 5.30 x 5.30 =
+# 28.09 instead of 5.30. The original is staged first, so the mod under test finds its list and appends.
+#
+# The original declares 1.3 only. Whether the staging keeps it despite that is the first thing the scenario
+# asserts ("mod ... is loaded"): a stop there is the staging, not the mod.
+Buitrago.GeniusesCraftFast     2625574564

@@ -1,0 +1,11 @@
+# Pass "avec-decore": the minimal set plus DeCore, which About.xml names in loadAfter.
+#
+# Daniledman.DeCore, Workshop 951016023. Its 1.6/Patches/Prod9stats.xml adds a skillNeedFactors list to
+# GeneralLaborSpeed unconditionally, with 1 + 0.03 x level. The mod under test is staged after it, so it appends
+# to that list: two entries, and at crafting 10 the two factors multiply, 1.30 x 5.30 = 6.89.
+#
+# PREREQUISITE, not met on 2026-09-28: the item is in neither the Windows Workshop folder nor the WSL cache
+# (it was installed on 2026-09-12 and is gone). It has to be subscribed to or downloaded before this pass can
+# stage. Until then the pass is unverified, and a "no Workshop id known" or missing-folder stop is not a defect
+# of the mod.
+Daniledman.DeCore              951016023

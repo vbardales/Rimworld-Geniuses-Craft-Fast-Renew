@@ -1,0 +1,8 @@
+# Pass "avec-statsmatter": the minimal set plus Stats Matter(continued), which About.xml names in loadAfter.
+#
+# StatsMatter.velcroboy333, Workshop 2208346459. Its Stats_Pawns_WorkRecipes.xml creates or replaces the
+# skillNeedFactors list of GeneralLaborSpeed with 0.9 + 0.025 x level. THE ORDER OF THE LINES IS THE LOAD ORDER
+# and the staging activates the mod under test after every mod of the map, so it loads after Stats Matter and
+# appends to the list Stats Matter created: two entries, and at crafting 10 the two factors multiply,
+# 1.15 x 5.30 = 6.095.
+StatsMatter.velcroboy333       2208346459

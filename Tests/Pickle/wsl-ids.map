@@ -1,0 +1,5 @@
+# Workshop ids that the passes resolve. Nothing here is activated by itself: what loads is what About.xml
+# declares, plus what a named pass adds.
+Daniledman.DeCore              951016023
+StatsMatter.velcroboy333       2208346459
+Buitrago.GeniusesCraftFast     2625574564
