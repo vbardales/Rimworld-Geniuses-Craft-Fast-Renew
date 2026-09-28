@@ -38,7 +38,7 @@ them before Renew to preserve the skill-factor list and Renew's entry. Their fac
 multiply with Renew's; see scenario 3.
 
 ```
-nelim.geniusescraftfastrenew       this mod            check overlaps in scenario 3
+nelim.geniusescraftfast       this mod            check overlaps in scenario 3
 ```
 
 It is already active: line 24 of `ModsConfig.xml`, checked on 2026-09-12. Empty `Player.log`

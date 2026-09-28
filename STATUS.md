@@ -4,7 +4,7 @@ translation_en: not_applicable
 translation_fr: not_applicable
 settings_audit: not_applicable
 mod:          Geniuses Craft Fast Renew (unofficial)
-packageId:    nelim.geniusescraftfastrenew
+packageId:    nelim.geniusescraftfast
 repo:         Rimworld-Geniuses-Craft-Fast-Renew
 visibility:   public
 detached:     yes
@@ -112,7 +112,7 @@ TRANSLATIONS.md and AGENTS.md; the supplied audit prompt overrides conflicting r
 | preTest -> done | Independent offline checks pass; nine functional scenarios are written with actions and expected readings, using the common setup and existing-save prerequisites in TESTING.md. The real shipped patch was exercised; see commands and limits below. Cumulative stage remains blocked at presentation. |
 | done -> tested | Not verified. No game was launched, no scenario executed, no Player.log or live English/French UI checked in this audit. Existing-save add/remove is planned in scenario 9. A separate new-colony creation test is not necessary for this stat-only patch: no world generation, new-game hook or persistent mod data. Existing-save scenarios still require actual execution. |
 
-Repository/legal packaging: packageId `nelim.geniusescraftfastrenew`, folder
+Repository/legal packaging: packageId `nelim.geniusescraftfast`, folder
 `GeniusesCraftFastRenew`, repository `Rimworld-Geniuses-Craft-Fast-Renew`, and display name
 are semantically consistent. English README, ATTRIBUTION, LICENSE, CHANGELOG and TESTING
 exist. Root and shipped LICENSE/ATTRIBUTION copies match by SHA-256. The installed original
@@ -257,9 +257,10 @@ by the thread that holds this mod:
 
 `detached: yes` since 2026-09-12: this folder is its own git repository, on `main`, with one
 remote pointing at the public repository above. The monorepo ignores it and tracks none of its
-files. The `packageId` gained its `Renew` on the same day, which was only safe because nothing
-held the old `nelim.geniusescraftfast`: no Workshop item, no save file, no other mod of hers
-naming it, and the one line of `ModsConfig.xml` that did was rewritten.
+files. The `packageId` is `nelim.geniusescraftfast`, without the `Renew` suffix: it gained it on
+2026-09-12 and lost it on 2026-09-28, at Virginie's decision, after the Workshop item had been
+pre-published (`Mod/About/PublishedFileId.txt`). The folder, repository and display name keep
+their `Renew`. No other mod of hers names either identifier.
 
 `licence: silent` — the source declares none. GeniusesCraftFast ships no `LICENSE` file and its
 Steam description says nothing about reuse, and it has been abandoned since 11 October 2021, page

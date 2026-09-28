@@ -2,7 +2,7 @@
 <ModMetaData>
   <name>Geniuses Craft Fast Renew (unofficial)</name>
   <author>Buitrago - adapted by Nelim for 1.6</author>
-  <packageId>nelim.geniusescraftfastrenew</packageId>
+  <packageId>nelim.geniusescraftfast</packageId>
   <url>https://github.com/vbardales/Rimworld-Geniuses-Craft-Fast-Renew</url>
   <supportedVersions>
     <li>1.6</li>
