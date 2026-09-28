@@ -8,6 +8,12 @@
   The page is still online. The mod is abandoned, not withdrawn, and no continuation of it
   exists on the Workshop.
 - **Reused here:** the whole mod — which is one `PatchOperationAdd` and the two numbers in it.
+- **Source repository:** none found, so there is no upstream to fork or send pull requests to. Checked
+  on 2026-09-28: the Steam page and the mod's `About.xml` link to no repository, a GitHub search
+  for the mod name returns only this adaptation, and the five GitHub accounts named like the
+  author hold no RimWorld repository (their identity with the author is not established either
+  way). The adaptation therefore starts from the Workshop files themselves, which are two files
+  and one patch operation. If the author publishes a repository, send the fixes there first.
 
 ## Licence
 
