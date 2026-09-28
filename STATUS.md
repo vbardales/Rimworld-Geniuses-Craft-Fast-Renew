@@ -13,6 +13,7 @@ workflow_stage: done
 licence:      silent
 adaptation_licence: MIT, adaptation work only; see LICENSE
 licence_at:   three places, the About description among them
+upstream_mod_remotes: N/A
 dependencies: none
 showcase:     complete
 tested_on:
