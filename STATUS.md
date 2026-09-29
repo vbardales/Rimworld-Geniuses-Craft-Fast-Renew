@@ -19,8 +19,8 @@ showcase:     complete
 tested_on:
 workshop:     3806761999 (private item created by the 0.1.0 upload of 2026-09-23; PublishedFileId.txt committed in 1692def)
 remaining:
-  - unverified: 01-patch-lands and 03-mechanoid must be replayed in the minimal pass; both failed on 2026-09-28 for a wrong expectation in the scenario (fixed same day, not yet rerun), not a mod defect
-  - unverified: 02-curve, 04-decore, 05-statsmatter and 06-original-incompatible passed on 2026-09-28 but are not yet re-confirmed against the two fixed scenarios' sibling run
+  - unverified: the minimal pass must be replayed again on e4fd722. Its 2026-09-29 run (below) failed on a Pickle-internal error, not a mod defect: 01-patch-lands passed (confirms the 2026-09-28 fix), but every scenario that spawns a colonist hit "Accessing map pawns off main thread" from Pickle's own SuiteRunner
+  - unverified: 04-decore, 05-statsmatter and 06-original-incompatible passed on 2026-09-28 and were not affected by the 2026-09-29 failure (they were skipped in that pass, not run); still awaiting a joint green minimal pass
   - unverified: French UI is not exercised by this suite; the mod adds no text, so localization stays not_applicable, but no French pass was run either
   - feature: PUBLICATION.md (Steam description block, 1.0.0 change note, gallery order, thank-you drafts) is required before tested -> prepublished; the thank-you register has no row yet for the original, DeCore and Stats Matter
 session:      local_ee3236c6-0c0c-4486-8420-7ec19ccd2a13
@@ -115,6 +115,24 @@ scenario. The stat card carried no Crafting line in that run, which is the actua
 expected value to 0.5, with the reasoning in the feature file.
 
 Neither failure is a defect of the mod: both are corrected in `Tests/Pickle/Mod/Pickle/Features/`, not yet replayed.
+
+## Minimal pass replay, 2026-09-29 — Pickle-internal failure, not a mod defect
+
+Replayed on `e4fd722` (the two fixes above). Result: 1 passed, 8 failed, 3 skipped of 12.
+
+`01-patch-lands` passed, confirming the display-name fix. Every other scenario that spawns a colonist —
+all seven of `02-curve` and `03-mechanoid` — failed on the same error, logged by Pickle itself and not by this
+mod's patch: `Accessing map pawns off main thread - this is never allowed due to list pooling and will result in
+modification exceptions elsewhere in code.` (`RimWorks.Pickle.Runtime.SuiteRunner:87`, seven occurrences,
+`Tests/Pickle/Evidence/minimal-en-e4fd722/Player.log`). `exitReason: failed`, a completed run, not a partial one.
+`04-decore`, `05-statsmatter` and `06-original-incompatible` were skipped in this pass (as designed, `@requires`)
+and untouched by this failure; their 2026-09-28 green stands.
+
+Read against `AUDIT.md`'s environment causes: this is not one of the four already documented there (Prepatcher,
+covered window, Concord/Harmony bridge, sleeping machine), so it is a fifth, distinct from a defect of this mod's
+patch — the stack trace is entirely inside Pickle's own runner, nothing in it names `GeneralLaborSpeed` or this
+packageId. Filed a bare replay of the same pass on the same revision to see whether it recurs; not fixed by any
+change here, since there is nothing in this mod's scenarios to change.
 
 ## Presentation corrections and current stage — 2026-09-13
 

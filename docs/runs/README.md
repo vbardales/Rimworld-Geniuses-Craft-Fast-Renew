@@ -9,3 +9,4 @@ Format: `date | revision | pass | language | filter | exitReason | features foun
 2026-09-28 | aa5f14b | avec-statsmatter | English | 05-statsmatter | passed | 6/1 | 1/0/0 | green | Tests/Pickle/Evidence/avec-statsmatter-en-aa5f14b
 2026-09-28 | aa5f14b | incompat-original | English | 06-original-incompatible | passed | 6/1 | 1/0/0 | green | Tests/Pickle/Evidence/incompat-original-en-aa5f14b
 2026-09-28 | aa5f14b | avec-decore | English | 04-decore | passed | 6/1 | 1/0/0 | green | Tests/Pickle/Evidence/avec-decore-en-aa5f14b
+2026-09-29 | e4fd722 | minimal | English | (none) | failed | 6/3 | 1/8/3 | Pickle-internal thread error on every colonist spawn, not a mod defect; 01-patch-lands passed | Tests/Pickle/Evidence/minimal-en-e4fd722
