@@ -19,12 +19,10 @@ showcase:     complete
 tested_on:
 workshop:     3806761999 (private item created by the 0.1.0 upload of 2026-09-23; PublishedFileId.txt committed in 1692def)
 remaining:
-  - unverified: the minimal pass must be replayed again on e4fd722. Its 2026-09-29 run (below) failed on a Pickle-internal error, not a mod defect: 01-patch-lands passed (confirms the 2026-09-28 fix), but every scenario that spawns a colonist hit "Accessing map pawns off main thread" from Pickle's own SuiteRunner
-  - unverified: 04-decore, 05-statsmatter and 06-original-incompatible passed on 2026-09-28 and were not affected by the 2026-09-29 failure (they were skipped in that pass, not run); still awaiting a joint green minimal pass
   - unverified: French UI is not exercised by this suite; the mod adds no text, so localization stays not_applicable, but no French pass was run either
   - feature: PUBLICATION.md (Steam description block, 1.0.0 change note, gallery order, thank-you drafts) is required before tested -> prepublished; the thank-you register has no row yet for the original, DeCore and Stats Matter
 session:      local_ee3236c6-0c0c-4486-8420-7ec19ccd2a13
-updated:      2026-09-28, first Pickle runs read: 4/6 features green, 2 fixed and pending replay
+updated:      2026-09-30, minimal pass replay green (9/0/3), all four passes jointly pass
 ---
 
 # Geniuses Craft Fast Renew — status
@@ -133,6 +131,15 @@ covered window, Concord/Harmony bridge, sleeping machine), so it is a fifth, dis
 patch — the stack trace is entirely inside Pickle's own runner, nothing in it names `GeneralLaborSpeed` or this
 packageId. Filed a bare replay of the same pass on the same revision to see whether it recurs; not fixed by any
 change here, since there is nothing in this mod's scenarios to change.
+
+## Minimal pass replay, 2026-09-30 — green, one-off confirmed
+
+Same revision `e4fd722`, same minimal pass, no code change. Result: 9 passed, 0 failed, 3 skipped of 12.
+The thread error did not recur. The three skipped scenarios are the `@requires`-gated ones (`04`, `05`, `06`),
+correctly skipped under the minimal filter, not affected. All four passes (minimal, avec-statsmatter,
+incompat-original, avec-decore) are now jointly green. Evidence: `Tests/Pickle/Evidence/minimal-en-e4fd722-retry`.
+`done -> tested` per `TESTING.md`'s "What `tested` requires" now has its automated-suite leg satisfied; remaining
+gaps before `tested` are the in-game French/English stat-card read and the PUBLICATION.md items listed above.
 
 ## Presentation corrections and current stage — 2026-09-13
 
