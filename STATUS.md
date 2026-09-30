@@ -261,6 +261,12 @@ repository documentation are excluded by TRANSLATIONS.md. Check-DefInjected is t
 not applicable. Vanilla stat-card rendering in EN/FR remains an unexecuted final game
 check; no native localization regression is certified by this inventory.
 
+**Re-checked 2026-09-30**, on request, after a sweep found a mislabelled French folder in another
+mod. `find` over the whole repository, any depth and case, for `Languages`, `Keyed`,
+`DefInjected`, `Strings`, `French`, `Français`, `grammar`: nothing. The one patch file was reread
+in full: it names two vanilla identifiers (`GeneralLaborSpeed`, `Crafting`) as field values, and
+adds no `<label>`, `<description>` or other string field of its own. The verdict is unchanged.
+
 ### Executed checks and reproducible evidence
 
 Game data: installed RimWorld `1.6.4871 rev590`, standard Steam installation.
