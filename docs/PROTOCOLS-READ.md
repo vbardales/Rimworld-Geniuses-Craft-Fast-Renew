@@ -51,3 +51,28 @@ Read in full unless said otherwise. Re-read a file when its last commit or its h
 | `LICENSE` | unchanged | MIT over the adaptation work only |
 | `Mod/About/About.xml` | `e4482c1` | packageId without `renew` |
 | `docs/runs/`, `Tests/Pickle/` | written 2026-09-28 | No run yet |
+
+## Re-read on 2026-10-02 (audit session)
+
+The tables above are the 2026-09-28 state. Git history of the protocol files is unreliable from here (the monorepo and
+the protocols repository disagree), so the version is the SHA-256 prefix of the file as read. A file whose hash equals the
+one below is not read again.
+
+| File | Hash read | Read how | Useful for this mod |
+| --- | --- | --- | --- |
+| `AGENTS.md` | `7a236f03ca15` | in full (also loaded as project instructions) | yes: evidence rule (latest report per scenario for the revision in the repository), `docs/runs/` is lines, trim `history.md` once published |
+| `AUDIT.md` | `7c00eb1f3b1b` | in full | yes: steps 9 and 12 (no `@wip`, every conditional scenario run, no manual test; titles of the session); pass ordering (never-run and red first, non-regression last) |
+| `PUBLISHING.md` | `30a1c36885ed` | lines 1-150 and the headings, plus greps on CHANGELOG, PublishedFileId, BACKLOG, gallery | yes: PR to the origin repository is mandatory when one exists (none here); gallery folder starts with `0-` = copy of `Preview.png`; no `renew` in a packageId. Not read: the CI section, the mention and licence sections (nothing acted on) |
+| `TRANSLATIONS.md` | `e381086a5271` | headings, `not_applicable` definition and plural rule | yes: `not_applicable` needs an inventory that proves no text; the plural rule has no number to apply to |
+| `MOD_SETTINGS.md` | `404916bc99a7` | unchanged since 2026-09-28, not re-read | yes, as recorded above |
+| `STYLE_RIMWORLD.md` | `5a054cf3a04b` | not re-read | no: images belong to the owner, the audit generates none |
+| `WORKSHOP_COMMENTS.md` | `3fb37586f04b` | not re-read (hash changed since 2026-09-28) | not yet: needed for the thank-you drafts of `tested -> prepublished` |
+| `scripts/SEARCHING.md` | `013075b06b89` | unchanged, not re-read | no new search this time |
+| `PickleTools/README.md`, `Headless/README.md`, `docs/steps.md` | `40e44a5d2c12`, `2310bb974f68`, `6cb87154cdb9` | Headless: grep on evidence only (lines 312-320, 392-394) | the evidence rule only; hashes changed since 2026-09-28, the parts used then are not re-read |
+| `Rimworld-Release-Admin/docs/OPERATIONS.md` | `23fcf6423000` | not re-read | needed on publication day only |
+| `Rimworld-Ticket-Dispatcher/docs/WELCOME.md`, `SUBMIT.md` | `08b440a03f74`, `eaca3969c7eb` | not re-read | needed when a request is deposited; no request this session |
+| `PickleTools/Authoring/README.md` | `349e596b4af7` | not re-read | already used to write the suite |
+
+Own files read today: `STATUS.md`, `TESTING.md`, `CHANGELOG.md`, `Tests/Pickle/README.md`, `docs/runs/README.md`. Absent for
+this mod, still correct: `BACKLOG.md` (no origin repository, so no pull request to track), `NOTES.md`, `BUGS.md`,
+`PUBLICATION.md` (criterion of `tested -> prepublished`).

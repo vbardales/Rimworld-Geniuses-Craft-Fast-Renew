@@ -22,12 +22,55 @@ remaining:
   - unverified: French UI is not exercised by this suite; the mod adds no text, so localization stays not_applicable, but no French pass was run either
   - feature: PUBLICATION.md (Steam description block, 1.0.0 change note, gallery order, thank-you drafts) is required before tested -> prepublished; the thank-you register has no row yet for the original, DeCore and Stats Matter
 session:      local_ee3236c6-0c0c-4486-8420-7ec19ccd2a13
-updated:      2026-09-30, minimal pass replay green (9/0/3), all four passes jointly pass
+updated:      2026-10-02, audit: done kept, evidence trimmed, protocol versions re-read
 ---
 
 # Geniuses Craft Fast Renew — status
 
-## Audit 2026-09-28 — done kept
+## Audit 2026-10-02 — done kept
+
+**Previous stage `done` -> retained `done`** (`workflow_stage: done`). Replaces the decision paragraph of 2026-09-28,
+which stays below as history. The first failing gate fixes the stage; none failed.
+
+Audited revision: `8e1ec67`, working tree clean at the start. `Mod/` is unchanged since the Pickle runs except
+`Preview.png` (the ModIcon stamp, `0988219`), which no scenario reads. Protocols re-read against their current
+hashes: `docs/PROTOCOLS-READ.md`.
+
+| Check | Result |
+| --- | --- |
+| Standalone repository, remote, `STATUS.md`, English documentation | Unchanged, valid |
+| Upstream repository of the original | **Searched again on 2026-10-02: none.** The only GitHub hit for "GeniusesCraftFast" is this adaptation. `upstream_mod_remotes: N/A` stays; no fork, no pull request, so no `BACKLOG.md` entry (`PUBLISHING.md`: the pull request is mandatory only when an origin repository exists) |
+| `.dds` | None on disk under `Mod/`, none tracked (`git ls-files`), `*.dds` already in `.gitignore` |
+| `options` / `l10n` against the current `MOD_SETTINGS.md` and `TRANSLATIONS.md` | `not_applicable` still valid: the mod adds no text, no number reaches a key, no setting |
+| `l10n -> preTest` | Cited from 2026-09-13 and 2026-09-28; `About.xml` unchanged except the packageId |
+| `preTest -> done` | `_tools/Test-Patch.ps1` rerun today, both branches PASS; `git diff --check` clean. Pickle suite written, scope justified in `Tests/Pickle/README.md` |
+| `CHANGELOG.md` | Already opens (below the unreleased `1.0.0`) with `## [0.1.0] — 2026-09-23`, creation of the publishIdFile; `Mod/About/PublishedFileId.txt` exists (`3806761999`) and is committed. Nothing to initialise |
+| Evidence | Trimmed (below) |
+| `done -> tested` | Not met; see the table below |
+
+### `tested` criteria, state on 2026-10-02
+
+| Criterion | State |
+| --- | --- |
+| No scenario in `@wip` | Met: none in the six features (`grep`) |
+| Every conditional scenario has run | Met: `04`, `05`, `06` each played in their own pass on 2026-09-28 (`aa5f14b`), green; `Mod/Patches` identical since |
+| No manual test left | Met: every row of the nine-scenario table in `TESTING.md` is automated or listed not applicable with its reason |
+| Suites green, `exitReason` and counts read | Met: minimal 9/0/3 (`exitReason: passed`, 3 features played of 6, the other 3 are the `@requires` ones), plus the three conditional passes 1/0/0 |
+| `@review` captures opened | Not applicable: the suite has none and takes no screenshot |
+| Logs checked, UI in FR and EN | **Open**: English only. The mod adds no text, so a French pass would show nothing new; settle it by one French minimal pass or by writing the not-applicable reason |
+| Non-regression pass on the final revision | Open by `AUDIT.md`'s ordering: deposited last, once nothing else changes |
+| `PUBLICATION.md` | Missing; criterion of `tested -> prepublished` |
+
+### Evidence trimmed, 2026-10-02
+
+Removed from disk (nothing was in git): `minimal-en-aa5f14b` (7/2/3, two scenario expectations since corrected,
+superseded by the 9/0/3 replay), `minimal-en-e4fd722` (the Pickle-internal thread error; the facts are in the
+2026-09-29 section below and in `docs/runs/README.md`), and `report.html` + `messages.ndjson` of
+`minimal-en-e4fd722-retry`. Kept (474 KB): `minimal-en-e4fd722-retry` (latest for 01, 02, 03) and the three `aa5f14b`
+folders for `04`, `05`, `06`, the sole proof of those scenarios and still valid because `Mod/Patches` has not moved.
+No `pickle-reports-archive/` folder belongs to this mod (summaries searched), so none was touched.
+
+## Audit 2026-09-28 — done kept (decision replaced on 2026-10-02, kept as history)
 
 **Previous stage `done` -> retained `done`** (`workflow_stage: done`; `stage` codes: `showcase` covers Preview
 générée to l10n, `preTest`, `done`, `tested`, `published`). No gate failed, so nothing moves down.
@@ -122,7 +165,7 @@ Replayed on `e4fd722` (the two fixes above). Result: 1 passed, 8 failed, 3 skipp
 all seven of `02-curve` and `03-mechanoid` — failed on the same error, logged by Pickle itself and not by this
 mod's patch: `Accessing map pawns off main thread - this is never allowed due to list pooling and will result in
 modification exceptions elsewhere in code.` (`RimWorks.Pickle.Runtime.SuiteRunner:87`, seven occurrences,
-`Tests/Pickle/Evidence/minimal-en-e4fd722/Player.log`). `exitReason: failed`, a completed run, not a partial one.
+evidence folder removed on 2026-10-02, line kept in `docs/runs/README.md`). `exitReason: failed`, a completed run, not a partial one.
 `04-decore`, `05-statsmatter` and `06-original-incompatible` were skipped in this pass (as designed, `@requires`)
 and untouched by this failure; their 2026-09-28 green stands.
 

@@ -75,7 +75,7 @@ On top of the general gate of `AUDIT.md`, step 9. All must hold for the revision
   whose factors are not all 1) is a fixture or expectation to correct and replay, not a defect of the mod. A red
   that survives is a defect. **Both reds of the first run were exactly this**: `01-patch-lands` named the mod by
   packageId where the step matches its display name, and `03-mechanoid` expected 1 where vanilla gives a
-  constructoid 0.5 with no Mechanitor work precept. Both fixed in the feature files; **not yet replayed**.
+  constructoid 0.5 with no Mechanitor work precept. Both fixed in the feature files and **replayed green on 2026-09-30** (minimal 9/0/3, `docs/runs/README.md`).
 - English and French are not passes here: the mod adds no text. No French pass has run either.
 - Evidence is kept as `Tests/Pickle/README.md` says, one line per run in `docs/runs/README.md`.
 
