@@ -8,7 +8,7 @@ packageId:    nelim.geniusescraftfast
 repo:         Rimworld-Geniuses-Craft-Fast-Renew
 visibility:   public
 detached:     yes
-workflow_stage: localize[1.0.0]
+workflow_stage: writeTests[1.0.0]
 licence:      silent
 adaptation_licence: MIT, adaptation work only; see LICENSE
 licence_at:   three places, the About description among them
@@ -23,8 +23,8 @@ remaining:
   - unverified: French UI is not exercised by this suite; the mod adds no text, so localization stays not_applicable, but no French pass was run either
   - feature: PUBLICATION.md (Steam description block, 1.0.0 change note, gallery order, thank-you drafts) is required before tested -> prepublished; the thank-you register has no row yet for the original, DeCore and Stats Matter
 session:      local_f996ad1c-057c-4d36-a49d-48d4556b2b6c
-updated:      2026-10-11, re-audit after new Preview source: localize[1.0.0]
-protocols_read_sha: 7635a987032bca47a404afa2f395f300a9c4be01
+updated:      2026-10-11, localize exit criteria met: writeTests[1.0.0]
+protocols_read_sha: 366d2299abcc3f3c230b4318e20f3c207afe1e99
 ---
 
 # Geniuses Craft Fast Renew — status
