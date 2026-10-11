@@ -8,7 +8,7 @@ packageId:    nelim.geniusescraftfast
 repo:         Rimworld-Geniuses-Craft-Fast-Renew
 visibility:   public
 detached:     yes
-workflow_stage: writeTests[1.0.0]
+workflow_stage: playTests[1.0.0]
 licence:      silent
 adaptation_licence: MIT, adaptation work only; see LICENSE
 licence_at:   three places, the About description among them
@@ -22,8 +22,8 @@ remaining:
   - unverified: French UI is not exercised by this suite; the mod adds no text, so localization stays not_applicable, but no French pass was run either
   - feature: PUBLICATION.md (Steam description block, 1.0.0 change note, gallery order, thank-you drafts) is required before tested -> prepublished; the thank-you register has no row yet for the original, DeCore and Stats Matter
 session:      local_f996ad1c-057c-4d36-a49d-48d4556b2b6c
-updated:      2026-10-11, localize exit criteria met: writeTests[1.0.0]
-protocols_read_sha: 366d2299abcc3f3c230b4318e20f3c207afe1e99
+updated:      2026-10-11, writeTests exit criteria met: playTests[1.0.0]
+protocols_read_sha: ac587c23f2481ac64ab621b92d75aac0742dce9e
 ---
 
 # Geniuses Craft Fast Renew — status
@@ -41,7 +41,7 @@ Old `done` (= `playTests`) replaced by the first failing gate. Decision paragrap
 | 4 declareDependencies -> auditSettings | Rechecked 2026-10-11 on About.xml: no hard dependency, `loadAfter` Core, five DLC, DeCore, Stats Matter, `incompatibleWith` the original, no LoadFolders. `Test-Patch.ps1` rerun today: both branches PASS, `git diff --check` clean |
 | 5 auditSettings -> localize | Valid: `settings_audit: not_applicable`, no page, no shortcut (fixed curve is the purpose) |
 | 6 localize -> writeTests | Valid: `FRENCH_REVIEW.md` generated 2026-10-11 by `Make-FrenchReview.ps1`, says the mod ships no French and lists no text. `translation_*` `not_applicable` stands (no text added); nothing for Virginie to correct, the review line stays empty on purpose |
-| 7 writeTests -> playTests | In progress. `TESTING.md` renamed `TEST_SCENARIOS.md` (AUDIT.md 7.a), references updated. `Test-Patch.ps1` rerun 2026-10-11 PASS. Open: `PUBLICATION.md` (writeDocs) that 7.a names as the list of promised behaviours; `Test-Patch.ps1` row in `scripts/LOCAL_SCRIPTS.md` awaits Virginie; sha tested to record at exit (7.f) |
+| 7 writeTests -> playTests | Valid. `TEST_SCENARIOS.md` (renamed from `TESTING.md`, nine scenarios each automated or not applicable with its reason, figures checked against the code on 2026-09-12); `_tools/Test-Patch.ps1` rerun 2026-10-11 PASS (both branches); Pickle suite written (six features, `Tests/Pickle/README.md` justifies what stays out). 7.a: `PUBLICATION.md` is a `writeDocs` deliverable (11.e), so the promised behaviours are those of About.xml and README, all covered. 7.f: tested revision `ae14b17`; `Mod/` differs from the Pickle runs only by `ModIcon.png` and `Preview.png`, which no scenario reads. Local scripts: rows in `scripts/LOCAL_SCRIPTS.md` await Virginie |
 
 Next step: `FRENCH_REVIEW.md` (6.f), then PUBLICATION.md and TEST_SCENARIOS.md at writeTests. Nothing run in game.
 
