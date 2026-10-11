@@ -8,7 +8,7 @@ packageId:    nelim.geniusescraftfast
 repo:         Rimworld-Geniuses-Craft-Fast-Renew
 visibility:   public
 detached:     yes
-workflow_stage: makeSources
+workflow_stage: localize[1.0.0]
 licence:      silent
 adaptation_licence: MIT, adaptation work only; see LICENSE
 licence_at:   three places, the About description among them
@@ -18,22 +18,19 @@ showcase:     complete
 tested_on:
 workshop:     3806761999 (private item created by the 0.1.0 upload of 2026-09-23; PublishedFileId.txt committed in 1692def)
 remaining:
-  - defect: Art/Preview-source.png mean value 0.244 < 0.30 (AUDIT.md 2.e); only the owner supplies a new source or waives it
-  - defect: Mod/About/ModIcon.png older than ModIcon-source.png and under 20 KB (2.b); session regenerates it
-  - defect: CHANGELOG.md heading must be `## [Unreleased]` until the dry-run (3.c)
   - defect: FRENCH_REVIEW.md absent; AUDIT.md 6.f requires it "always, even without French" (scripts/Make-FrenchReview.ps1 -ModRoot <mod>), Translation audit section to say there is no French text. Blocks localize -> writeTests
   - defect: tests are described in TESTING.md, not TEST_SCENARIOS.md (AUDIT.md 7.a), and no scenario ties to a PUBLICATION.md that does not exist yet; settle at writeTests
   - done 2026-10-11: _tools/build-preview.cjs, build-about.sh, package.json removed (shared Render-Preview.cjs + Art/Preview.config.json replace them); _tools/Test-Patch.ps1 stays (one consumer, emulates two XML operations offline), row in scripts/LOCAL_SCRIPTS.md awaits validation; art-README.md still cites the removed tools, belongs to the uncommitted Art migration
   - unverified: French UI is not exercised by this suite; the mod adds no text, so localization stays not_applicable, but no French pass was run either
   - feature: PUBLICATION.md (Steam description block, 1.0.0 change note, gallery order, thank-you drafts) is required before tested -> prepublished; the thank-you register has no row yet for the original, DeCore and Stats Matter
 session:      local_f996ad1c-057c-4d36-a49d-48d4556b2b6c
-updated:      2026-10-11, full re-audit: done -> makeSources (2.e palette, 2.b stale ModIcon)
-protocols_read_sha: 5dd27148e2bce1a728b6607c369ad31308c6ca53
+updated:      2026-10-11, re-audit after new Preview source: localize[1.0.0]
+protocols_read_sha: 7635a987032bca47a404afa2f395f300a9c4be01
 ---
 
 # Geniuses Craft Fast Renew — status
 
-## Audit 2026-10-11 — back to `makeSources`
+## Audit 2026-10-11 — back to `localize[1.0.0]` (after a first stop at `makeSources`)
 
 Old `done` (= `playTests`) replaced by the first failing gate. Decision paragraph of 2026-10-02 below is **replaced on
 2026-10-11**, kept as history. Audited against the current `AUDIT.md` (workflow `setupRepo` ... `dormant`).
@@ -41,14 +38,14 @@ Old `done` (= `playTests`) replaced by the first failing gate. Decision paragrap
 | Gate | Result |
 | --- | --- |
 | 1 setupRepo -> makeSources | Valid, unchanged (own repo, remote, STATUS.md, English docs) |
-| 2 makeSources -> code | **Fails.** 2.e: `Art/Preview-source.png` mean value (Vmean) 0.244, below 0.30 (`Measure-Palette.sh`: 2 hue families, 9.87 % vivid, fine); source is the owner's, not touched. 2.b: `Mod/About/ModIcon.png` (2026-09-11, 19,588 bytes) is older than `Art/ModIcon-source.png` (2026-10-04) and under 20 KB: stale, to regenerate by the session. 2.f: Art set in migration, uncommitted (other session). Sizes ok: ModIcon 128x128, Preview 896x504, 647 KB |
-| 3 code -> declareDependencies | Would fail 3.c: `CHANGELOG.md` heading is `## [1.0.0] — unreleased`, protocol wants `## [Unreleased]` until the dry-run. No code, no build |
+| 2 makeSources -> code | Valid after fixes. New owner source `Art/Preview-source.png` 1672x941, Vmean 0.464, 2 hue families, flat sprites, one faceless settler, the loom reads at 268 px; first source (Vmean 0.244) replaced. `ModIcon.png` regenerated from `ModIcon-source.png` (128x128, 22.0 KB). `Mod/About/Preview.png` still the old composition: remounted at `mountPreview`. Art migration (Gallery, deletions, `Preview-original.png`) uncommitted, other session |
+| 3 code -> declareDependencies | Valid: no code, no build; `CHANGELOG.md` heading now `## [Unreleased]` (was `[1.0.0] — unreleased`) |
 | 4 declareDependencies -> auditSettings | Rechecked 2026-10-11 on About.xml: no hard dependency, `loadAfter` Core, five DLC, DeCore, Stats Matter, `incompatibleWith` the original, no LoadFolders. `Test-Patch.ps1` rerun today: both branches PASS, `git diff --check` clean |
 | 5 auditSettings -> localize | Valid: `settings_audit: not_applicable`, no page, no shortcut (fixed curve is the purpose) |
 | 6 localize -> writeTests | **Fails 6.f**: `FRENCH_REVIEW.md` does not exist. `translation_*` `not_applicable` stays justified (no text added) |
 | 7 writeTests -> playTests | Not reached. Known gaps: `TEST_SCENARIOS.md` name, `PUBLICATION.md` missing, local scripts not yet validated in `scripts/LOCAL_SCRIPTS.md` |
 
-Next step: owner decides on the Preview source (value 0.244 < 0.30); session regenerates `ModIcon.png`, fixes the CHANGELOG heading; then `FRENCH_REVIEW.md` (6.f), PUBLICATION.md, TEST_SCENARIOS.md. Nothing run in game.
+Next step: `FRENCH_REVIEW.md` (6.f), then PUBLICATION.md and TEST_SCENARIOS.md at writeTests. Nothing run in game.
 
 ## Audit 2026-10-02 — done kept
 
