@@ -18,7 +18,6 @@ showcase:     complete
 tested_on:
 workshop:     3806761999 (private item created by the 0.1.0 upload of 2026-09-23; PublishedFileId.txt committed in 1692def)
 remaining:
-  - defect: FRENCH_REVIEW.md absent; AUDIT.md 6.f requires it "always, even without French" (scripts/Make-FrenchReview.ps1 -ModRoot <mod>), Translation audit section to say there is no French text. Blocks localize -> writeTests
   - defect: tests are described in TESTING.md, not TEST_SCENARIOS.md (AUDIT.md 7.a), and no scenario ties to a PUBLICATION.md that does not exist yet; settle at writeTests
   - done 2026-10-11: _tools/build-preview.cjs, build-about.sh, package.json removed (shared Render-Preview.cjs + Art/Preview.config.json replace them); _tools/Test-Patch.ps1 stays (one consumer, emulates two XML operations offline), row in scripts/LOCAL_SCRIPTS.md awaits validation; art-README.md still cites the removed tools, belongs to the uncommitted Art migration
   - unverified: French UI is not exercised by this suite; the mod adds no text, so localization stays not_applicable, but no French pass was run either
@@ -42,7 +41,7 @@ Old `done` (= `playTests`) replaced by the first failing gate. Decision paragrap
 | 3 code -> declareDependencies | Valid: no code, no build; `CHANGELOG.md` heading now `## [Unreleased]` (was `[1.0.0] — unreleased`) |
 | 4 declareDependencies -> auditSettings | Rechecked 2026-10-11 on About.xml: no hard dependency, `loadAfter` Core, five DLC, DeCore, Stats Matter, `incompatibleWith` the original, no LoadFolders. `Test-Patch.ps1` rerun today: both branches PASS, `git diff --check` clean |
 | 5 auditSettings -> localize | Valid: `settings_audit: not_applicable`, no page, no shortcut (fixed curve is the purpose) |
-| 6 localize -> writeTests | **Fails 6.f**: `FRENCH_REVIEW.md` does not exist. `translation_*` `not_applicable` stays justified (no text added) |
+| 6 localize -> writeTests | Valid: `FRENCH_REVIEW.md` generated 2026-10-11 by `Make-FrenchReview.ps1`, says the mod ships no French and lists no text. `translation_*` `not_applicable` stands (no text added); nothing for Virginie to correct, the review line stays empty on purpose |
 | 7 writeTests -> playTests | Not reached. Known gaps: `TEST_SCENARIOS.md` name, `PUBLICATION.md` missing, local scripts not yet validated in `scripts/LOCAL_SCRIPTS.md` |
 
 Next step: `FRENCH_REVIEW.md` (6.f), then PUBLICATION.md and TEST_SCENARIOS.md at writeTests. Nothing run in game.
