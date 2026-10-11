@@ -20,7 +20,7 @@ workshop:     3806761999 (private item created by the 0.1.0 upload of 2026-09-23
 remaining:
   - defect: FRENCH_REVIEW.md absent; AUDIT.md 6.f requires it "always, even without French" (scripts/Make-FrenchReview.ps1 -ModRoot <mod>), Translation audit section to say there is no French text. Blocks localize -> writeTests
   - defect: tests are described in TESTING.md, not TEST_SCENARIOS.md (AUDIT.md 7.a), and no scenario ties to a PUBLICATION.md that does not exist yet; settle at writeTests
-  - defect: _tools/build-preview.cjs and _tools/build-about.sh predate the shared renderer (Art/Preview.config.json, working tree, uncommitted from the 2026-10-03 migration session); drop or justify in scripts/LOCAL_SCRIPTS.md once that migration is committed
+  - done 2026-10-11: _tools/build-preview.cjs, build-about.sh, package.json removed (shared Render-Preview.cjs + Art/Preview.config.json replace them); _tools/Test-Patch.ps1 stays (one consumer, emulates two XML operations offline), row in scripts/LOCAL_SCRIPTS.md awaits validation; art-README.md still cites the removed tools, belongs to the uncommitted Art migration
   - unverified: French UI is not exercised by this suite; the mod adds no text, so localization stays not_applicable, but no French pass was run either
   - feature: PUBLICATION.md (Steam description block, 1.0.0 change note, gallery order, thank-you drafts) is required before tested -> prepublished; the thank-you register has no row yet for the original, DeCore and Stats Matter
 session:      local_f996ad1c-057c-4d36-a49d-48d4556b2b6c
