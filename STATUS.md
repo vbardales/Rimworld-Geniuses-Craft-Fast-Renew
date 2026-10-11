@@ -8,27 +8,28 @@ packageId:    nelim.geniusescraftfast
 repo:         Rimworld-Geniuses-Craft-Fast-Renew
 visibility:   public
 detached:     yes
-workflow_stage: playTests[1.0.0]
+workflow_stage: shootGallery[1.0.0]
+code_review_sha: 2178bbc4503819ab4b8c543432a41566e1053c5f
 licence:      silent
 adaptation_licence: MIT, adaptation work only; see LICENSE
 licence_at:   three places, the About description among them
 upstream_mod_remotes: N/A
 dependencies: none
 showcase:     complete
-tested_on:
+tested_on:    RimWorld 1.6.4871 (Pickle, WSL), 2026-09-28 to 09-30, English only: minimal pass 9/0/3 at e4fd722 (exitReason passed), conditional passes avec-decore, avec-statsmatter, incompat-original 1/0/0 each at aa5f14b
 workshop:     3806761999 (private item created by the 0.1.0 upload of 2026-09-23; PublishedFileId.txt committed in 1692def)
 remaining:
   - done 2026-10-11: _tools/build-preview.cjs, build-about.sh, package.json removed (shared Render-Preview.cjs + Art/Preview.config.json replace them); _tools/Test-Patch.ps1 stays (one consumer, emulates two XML operations offline), row in scripts/LOCAL_SCRIPTS.md awaits validation; art-README.md still cites the removed tools, belongs to the uncommitted Art migration
-  - unverified: French UI is not exercised by this suite; the mod adds no text, so localization stays not_applicable, but no French pass was run either
+  - justified not_applicable: UI in French. The mod adds no text, so a French pass shows only vanilla strings; no pass planned (AUDIT.md 8.i, 2026-10-11)
   - feature: PUBLICATION.md (Steam description block, 1.0.0 change note, gallery order, thank-you drafts) is required before tested -> prepublished; the thank-you register has no row yet for the original, DeCore and Stats Matter
 session:      local_f996ad1c-057c-4d36-a49d-48d4556b2b6c
-updated:      2026-10-11, writeTests exit criteria met: playTests[1.0.0]
+updated:      2026-10-11, playTests exit criteria met: shootGallery[1.0.0]
 protocols_read_sha: ac587c23f2481ac64ab621b92d75aac0742dce9e
 ---
 
 # Geniuses Craft Fast Renew — status
 
-## Audit 2026-10-11 — back to `localize[1.0.0]` (after a first stop at `makeSources`)
+## Audit 2026-10-11 — playTests exit (history: `makeSources` -> `localize` -> `writeTests` -> `playTests` -> `shootGallery`)
 
 Old `done` (= `playTests`) replaced by the first failing gate. Decision paragraph of 2026-10-02 below is **replaced on
 2026-10-11**, kept as history. Audited against the current `AUDIT.md` (workflow `setupRepo` ... `dormant`).
@@ -42,6 +43,7 @@ Old `done` (= `playTests`) replaced by the first failing gate. Decision paragrap
 | 5 auditSettings -> localize | Valid: `settings_audit: not_applicable`, no page, no shortcut (fixed curve is the purpose) |
 | 6 localize -> writeTests | Valid: `FRENCH_REVIEW.md` generated 2026-10-11 by `Make-FrenchReview.ps1`, says the mod ships no French and lists no text. `translation_*` `not_applicable` stands (no text added); nothing for Virginie to correct, the review line stays empty on purpose |
 | 7 writeTests -> playTests | Valid. `TEST_SCENARIOS.md` (renamed from `TESTING.md`, nine scenarios each automated or not applicable with its reason, figures checked against the code on 2026-09-12); `_tools/Test-Patch.ps1` rerun 2026-10-11 PASS (both branches); Pickle suite written (six features, `Tests/Pickle/README.md` justifies what stays out). 7.a: `PUBLICATION.md` is a `writeDocs` deliverable (11.e), so the promised behaviours are those of About.xml and README, all covered. 7.f: tested revision `ae14b17`; `Mod/` differs from the Pickle runs only by `ModIcon.png` and `Preview.png`, which no scenario reads. Local scripts: rows in `scripts/LOCAL_SCRIPTS.md` await Virginie |
+| 8 playTests -> shootGallery | Valid. 8.c/8.f: suites played and green (see `tested_on`, `docs/runs/README.md`), the three conditionals each in their own pass. 8.d/8.e: no `@review`, no `@wip`. 8.h: no setting. 8.i: Player.log of the four kept runs read 2026-10-11: the only ERROR/WARN are Pickle harness lines (test mod "did not load any content", dependency without downloadUrl, Steamworks, FrameCapture, old map version), none from this mod or the patch; French UI justified not applicable (no text). 8.m: code review of `Mod/` (one patch, `About.xml`) done 2026-10-11, no defect: the conditional adds to an existing `skillNeedFactors` or creates it; both branches covered by `Test-Patch.ps1`; `code_review_sha` set. Not run: any French pass |
 
 Next step: `FRENCH_REVIEW.md` (6.f), then PUBLICATION.md and TEST_SCENARIOS.md at writeTests. Nothing run in game.
 
