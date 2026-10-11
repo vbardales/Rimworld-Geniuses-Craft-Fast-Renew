@@ -14,7 +14,7 @@
     removed      report.html, messages.ndjson
 
   Nothing is deleted before the re-encoded picture is written. Run it on the folder under Tests/Pickle/Evidence/
-  that a completed run was copied to; the folder stays on disk and out of git (see TESTING.md, "Evidence to keep"), and a
+  that a completed run was copied to; the folder stays on disk and out of git (see TEST_SCENARIOS.md, "Evidence to keep"), and a
   text summary of the run goes to docs/runs/.
 
   A screenshot is an evidence of what was on screen, not of pixels: this is fine for "is the button reachable"

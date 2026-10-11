@@ -36,8 +36,7 @@ defs, which proves nothing about the patch), and `git diff --check`.
 
 ## Automated in-game scenarios (Pickle)
 
-The suite is in `Tests/Pickle/` (six features, stock steps only, four passes) and is **written, never
-run**. Its `README.md` says what each feature shows, what stays out of Gherkin and why, the passes and their
+The suite is in `Tests/Pickle/` (six features, stock steps only, four passes). It was played on 2026-09-28 to 09-30 (minimal pass 9/0/3, the three conditional passes 1/0/0; one-line log in `docs/runs/README.md`). Its `README.md` says what each feature shows, what stays out of Gherkin and why, the passes and their
 commands, and the assumptions the first run will confirm or break. Every request goes to the dispatcher
 with `Submit-PickleRun.ps1`, never `Run-PickleWsl.ps1` and never the Windows game.
 

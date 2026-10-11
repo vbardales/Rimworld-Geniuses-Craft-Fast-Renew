@@ -1,7 +1,7 @@
 # In-game scenarios, run by Pickle
 
 This companion is development-only: it lives beside `Mod/`, never inside it, and Steam never receives it.
-It turns the checks of `../../TESTING.md` that only a running game can settle into scenarios.
+It turns the checks of `../../TEST_SCENARIOS.md` that only a running game can settle into scenarios.
 
 **Status: written, never run.** Every step is a stock Pickle step, matched by hand against Pickle's catalogue
 on 2026-09-28; there is no local C# and no PickleTools companion, so nothing to build. Running the suite is

@@ -11,7 +11,7 @@ function Assert($condition, [string]$message) {
 }
 
 # XML regression harness for the two operations this mod uses. This does not run
-# RimWorld's loader, stat cache, or jobs; TESTING.md covers those manual checks.
+# RimWorld's loader, stat cache, or jobs; TEST_SCENARIOS.md covers those manual checks.
 function Apply-Operation([xml]$document, $operation) {
     switch ([string]$operation.Class) {
         'PatchOperationConditional' {
