@@ -8,8 +8,7 @@ packageId:    nelim.geniusescraftfast
 repo:         Rimworld-Geniuses-Craft-Fast-Renew
 visibility:   public
 detached:     yes
-stage:        done
-workflow_stage: done
+workflow_stage: localize[1.0.0]
 licence:      silent
 adaptation_licence: MIT, adaptation work only; see LICENSE
 licence_at:   three places, the About description among them
@@ -19,13 +18,35 @@ showcase:     complete
 tested_on:
 workshop:     3806761999 (private item created by the 0.1.0 upload of 2026-09-23; PublishedFileId.txt committed in 1692def)
 remaining:
+  - defect: FRENCH_REVIEW.md absent; AUDIT.md 6.f requires it "always, even without French" (scripts/Make-FrenchReview.ps1 -ModRoot <mod>), Translation audit section to say there is no French text. Blocks localize -> writeTests
+  - defect: tests are described in TESTING.md, not TEST_SCENARIOS.md (AUDIT.md 7.a), and no scenario ties to a PUBLICATION.md that does not exist yet; settle at writeTests
+  - defect: _tools/build-preview.cjs and _tools/build-about.sh predate the shared renderer (Art/Preview.config.json, working tree, uncommitted from the 2026-10-03 migration session); drop or justify in scripts/LOCAL_SCRIPTS.md once that migration is committed
   - unverified: French UI is not exercised by this suite; the mod adds no text, so localization stays not_applicable, but no French pass was run either
   - feature: PUBLICATION.md (Steam description block, 1.0.0 change note, gallery order, thank-you drafts) is required before tested -> prepublished; the thank-you register has no row yet for the original, DeCore and Stats Matter
-session:      local_ee3236c6-0c0c-4486-8420-7ec19ccd2a13
-updated:      2026-10-02, audit: done kept, evidence trimmed, protocol versions re-read
+session:      local_f996ad1c-057c-4d36-a49d-48d4556b2b6c
+updated:      2026-10-11, audit against current protocols: done -> localize[1.0.0]
+protocols_read_sha: e520c40709f1a348a71e4409673c97e5f6baee93
 ---
 
 # Geniuses Craft Fast Renew — status
+
+## Audit 2026-10-11 — back to `localize[1.0.0]`
+
+Old `done` (= `playTests`) replaced by the first failing gate. Decision paragraph of 2026-10-02 below is **replaced on
+2026-10-11**, kept as history. Audited against the current `AUDIT.md` (workflow `setupRepo` ... `dormant`).
+
+| Gate | Result |
+| --- | --- |
+| 1 setupRepo -> makeSources | Valid, unchanged (own repo, remote, STATUS.md, English docs) |
+| 2 makeSources -> code | Sources present (`Art/ModIcon-source.png`, `Art/Preview-source.png`); derivatives on disk. Art regeneration through the shared renderer sits uncommitted in the working tree (other session); not judged here |
+| 3 code -> declareDependencies | Valid: no code, `CHANGELOG.md` has `1.0.0` unreleased |
+| 4 declareDependencies -> auditSettings | Valid: `loadAfter` Core, five DLC, DeCore, Stats Matter; `incompatibleWith` the original; no hard dependency; patch guarded (`2026-10-02` re-check stands) |
+| 5 auditSettings -> localize | Valid: `settings_audit: not_applicable`, no page, no shortcut (fixed curve is the purpose) |
+| 6 localize -> writeTests | **Fails 6.f**: `FRENCH_REVIEW.md` does not exist. `translation_*` `not_applicable` stays justified (no text added) |
+| 7 writeTests -> playTests | Not reached. Known gaps: `TEST_SCENARIOS.md` name, `PUBLICATION.md` missing, local scripts not yet validated in `scripts/LOCAL_SCRIPTS.md` |
+
+Next step: run `scripts/Make-FrenchReview.ps1 -ModRoot <mod>`, note in `Translation audit` that no French exists, then
+`writeTests`. Nothing run in game; no Pickle ticket in queue.
 
 ## Audit 2026-10-02 — done kept
 
@@ -449,3 +470,7 @@ so they are worth reading once more on the day rather than after.
 Vocabulary for `licence`: `open` an explicit licence, `silent` no licence and a dead source,
 `alive` no licence but a living source, `forbidden` a written refusal, `original` owing nothing
 to anyone — not a name, not an idea traceable to one mod, not a value derived from its assets.
+
+## Preview source migration — 2026-10-03
+
+Preview generation now uses the shared renderer with `Art/Preview.config.json`. Canonical sources and publishable outputs were preserved; transient QA belongs in ignored `Art/.render/`.
