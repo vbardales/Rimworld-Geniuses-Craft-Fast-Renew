@@ -47,7 +47,6 @@ stat's in-game description is still word for word the one quoted in the 2021 des
 Creates the Workshop item (publishIdFile). Steam creates every item as private, and this one
 stays private until the `1.0.0` release.
 
-This upload contained `Mod/` exactly as it stood at commit `5a243fc`, and nothing else changed
-since then apart from the `packageId`, which lost its `renew` suffix on 2026-09-28 (see `1.0.0`).
+This upload contained `Mod/` at commit `5a243fc`. The `packageId` subsequently lost its `renew` suffix on 2026-09-28; see Unreleased.
 The commit that adds `Mod/About/PublishedFileId.txt` is the commit of this version. It says
 nothing about the mod being public or tested.
