@@ -19,7 +19,7 @@ showcase:     complete
 tested_on:    RimWorld 1.6.4871 (Pickle, WSL), 2026-09-28 to 09-30, English only: minimal pass 9/0/3 at e4fd722 (exitReason passed), conditional passes avec-decore, avec-statsmatter, incompat-original 1/0/0 each at aa5f14b
 workshop:     3806761999 (private item created by the 0.1.0 upload of 2026-09-23; PublishedFileId.txt committed in 1692def)
 remaining:
-  - done 2026-10-11: _tools/build-preview.cjs, build-about.sh, package.json removed (shared Render-Preview.cjs + Art/Preview.config.json replace them); _tools/Test-Patch.ps1 stays (one consumer, emulates two XML operations offline), row in scripts/LOCAL_SCRIPTS.md awaits validation; art-README.md still cites the removed tools, belongs to the uncommitted Art migration
+  - done 2026-10-11: _tools/build-preview.cjs, build-about.sh, package.json removed (shared Render-Preview.cjs + Art/Preview.config.json replace them); Tests/Test-Patch.ps1 stays (moved from _tools/ on 2026-10-12: AGENTS.md closing pass 3, no `_` folder at the root) (one consumer, emulates two XML operations offline), row in scripts/LOCAL_SCRIPTS.md awaits validation; art-README.md still cites the removed tools, belongs to the uncommitted Art migration
   - justified not_applicable: UI in French. The mod adds no text, so a French pass shows only vanilla strings; no pass planned (AUDIT.md 8.i, 2026-10-11)
   - feature: PUBLICATION.md (Steam description block, 1.0.0 change note, gallery order, thank-you drafts) is required before tested -> prepublished; the thank-you register has no row yet for the original, DeCore and Stats Matter
 session:      local_f996ad1c-057c-4d36-a49d-48d4556b2b6c
@@ -42,7 +42,7 @@ Old `done` (= `playTests`) replaced by the first failing gate. Decision paragrap
 | 4 declareDependencies -> auditSettings | Rechecked 2026-10-11 on About.xml: no hard dependency, `loadAfter` Core, five DLC, DeCore, Stats Matter, `incompatibleWith` the original, no LoadFolders. `Test-Patch.ps1` rerun today: both branches PASS, `git diff --check` clean |
 | 5 auditSettings -> localize | Valid: `settings_audit: not_applicable`, no page, no shortcut (fixed curve is the purpose) |
 | 6 localize -> writeTests | Valid: `FRENCH_REVIEW.md` generated 2026-10-11 by `Make-FrenchReview.ps1`, says the mod ships no French and lists no text. `translation_*` `not_applicable` stands (no text added); nothing for Virginie to correct, the review line stays empty on purpose |
-| 7 writeTests -> playTests | Valid. `TEST_SCENARIOS.md` (renamed from `TESTING.md`, nine scenarios each automated or not applicable with its reason, figures checked against the code on 2026-09-12); `_tools/Test-Patch.ps1` rerun 2026-10-11 PASS (both branches); Pickle suite written (six features, `Tests/Pickle/README.md` justifies what stays out). 7.a: `PUBLICATION.md` is a `writeDocs` deliverable (11.e), so the promised behaviours are those of About.xml and README, all covered. 7.f: tested revision `ae14b17`; `Mod/` differs from the Pickle runs only by `ModIcon.png` and `Preview.png`, which no scenario reads. Local scripts: rows in `scripts/LOCAL_SCRIPTS.md` await Virginie |
+| 7 writeTests -> playTests | Valid. `TEST_SCENARIOS.md` (renamed from `TESTING.md`, nine scenarios each automated or not applicable with its reason, figures checked against the code on 2026-09-12); `Tests/Test-Patch.ps1` rerun 2026-10-11 PASS (both branches); Pickle suite written (six features, `Tests/Pickle/README.md` justifies what stays out). 7.a: `PUBLICATION.md` is a `writeDocs` deliverable (11.e), so the promised behaviours are those of About.xml and README, all covered. 7.f: tested revision `ae14b17`; `Mod/` differs from the Pickle runs only by `ModIcon.png` and `Preview.png`, which no scenario reads. Local scripts: rows in `scripts/LOCAL_SCRIPTS.md` await Virginie |
 | 8 playTests -> shootGallery | Valid. 8.c/8.f: suites played and green (see `tested_on`, `docs/runs/README.md`), the three conditionals each in their own pass. 8.d/8.e: no `@review`, no `@wip`. 8.h: no setting. 8.i: Player.log of the four kept runs read 2026-10-11: the only ERROR/WARN are Pickle harness lines (test mod "did not load any content", dependency without downloadUrl, Steamworks, FrameCapture, old map version), none from this mod or the patch; French UI justified not applicable (no text). 8.m: code review of `Mod/` (one patch, `About.xml`) done 2026-10-11, no defect: the conditional adds to an existing `skillNeedFactors` or creates it; both branches covered by `Test-Patch.ps1`; `code_review_sha` set. Not run: any French pass |
 | 14 followUp (later) | 14.a non-regression: full suite, no `-Filter`, on the published revision, deposited after the commit and the deployment. Never a condition of `playTests` or `shootGallery` (Audit workflow, 2026-10-12; AUDIT.md 8.c, 14.a). Not deposited yet. The 2026-09-28 to 09-30 evidence stays valid for `playTests`: `Mod/` differs only by `ModIcon.png` and `Preview.png` |
 
@@ -64,7 +64,7 @@ hashes: `docs/PROTOCOLS-READ.md`.
 | `.dds` | None on disk under `Mod/`, none tracked (`git ls-files`), `*.dds` already in `.gitignore` |
 | `options` / `l10n` against the current `MOD_SETTINGS.md` and `TRANSLATIONS.md` | `not_applicable` still valid: the mod adds no text, no number reaches a key, no setting |
 | `l10n -> preTest` | Cited from 2026-09-13 and 2026-09-28; `About.xml` unchanged except the packageId |
-| `preTest -> done` | `_tools/Test-Patch.ps1` rerun today, both branches PASS; `git diff --check` clean. Pickle suite written, scope justified in `Tests/Pickle/README.md` |
+| `preTest -> done` | `Tests/Test-Patch.ps1` rerun today, both branches PASS; `git diff --check` clean. Pickle suite written, scope justified in `Tests/Pickle/README.md` |
 | `CHANGELOG.md` | Already opens (below the unreleased `1.0.0`) with `## [0.1.0] — 2026-09-23`, creation of the publishIdFile; `Mod/About/PublishedFileId.txt` exists (`3806761999`) and is committed. Nothing to initialise |
 | Evidence | Trimmed (below) |
 | `done -> tested` | Not met; see the table below |
@@ -113,7 +113,7 @@ modified, `Tests/` and `docs/` untracked (written in this session), nothing else
 
 ### Controls run on 2026-09-28, RimWorld 1.6.4871
 
-- `_tools/Test-Patch.ps1`: both conditional branches pass, existing list preserved, curve, repeated application.
+- `Tests/Test-Patch.ps1`: both conditional branches pass, existing list preserved, curve, repeated application.
 - `Check-XmlFields`: 2 files, no unknown field. `Check-XmlClasses`: 3 references, all resolve. `Check-TypeRefs`: no
   unguarded third-party type. `Check-DefRefs`: well-formed, no unresolved reference or parent.
   `Check-ConfigErrors`: 0 of 0 defs, which proves nothing about the patch. `git diff --check`: clean.
@@ -146,7 +146,7 @@ modified, `Tests/` and `docs/` untracked (written in this session), nothing else
   on 2026-09-28 with `scripts/Search-Workshop.sh` (two earlier hand-rolled walks of mine were stopped, see
   `docs/PROTOCOLS-READ.md`): 6,163 XML files mention the stat, and 8 of them also mention `skillNeedFactors`. They are
   this mod (its own Workshop item and the junction), Stats Matter, the original, and four already in
-  `_tools/compatibility-candidates.txt` that write no factor (a redefinition of the stat in `2594241153`, the source
+  `Tests/compatibility-candidates.txt` that write no factor (a redefinition of the stat in `2594241153`, the source
   tree of `2866414675`, `3751288694`'s redirect of recipes). No new mod writes a Crafting factor. DeCore is not
   installed, so it was not part of this search.
 - `Mod/desktop.ini` exists on disk, hidden, ignored by git. Steam sends `Mod/` as it stands when the upload is made
@@ -248,7 +248,7 @@ No commit, push or Workshop publication was performed.
   contrast were rejected before replacing the shipped image. Geometry, fonts, size and
   precise measurements are in `Art/QA/preview-checks.json`; the sampled background is
   `Art/QA/preview-background.png`.
-- `_tools/Test-Patch.ps1` was rerun successfully on the installed vanilla data: both
+- `Tests/Test-Patch.ps1` was rerun successfully on the installed vanilla data: both
   branches, preserved Artistic entry, seven curve values and documented repeat behavior
   pass. `git diff --check` passed. The previous XML class/reference/dependency checks remain
   valid because the only XML change is descriptive metadata; About.xml parsing was rerun.
@@ -275,7 +275,7 @@ Later independent checks below do not bypass the first failed cumulative gate.
 Scope: standalone repository `C:/Users/nelim/Documents/rimworld/GeniusesCraftFastRenew`,
 distributed folder `Mod/`. Audited HEAD: `2e51a70758d3be632b4605854d9eeb5ed360700e`.
 At entry, About.xml, README.md, STATUS.md and TESTING.md had uncommitted changes;
-`_tools/Test-Patch.ps1` was untracked. The audit tested those working-tree files,
+`Tests/Test-Patch.ps1` was untracked. The audit tested those working-tree files,
 not merely HEAD, preserved them, and changed only this status document.
 Rules read: parent PUBLISHING.md, STYLE_RIMWORLD.md, MOD_SETTINGS.md,
 TRANSLATIONS.md and AGENTS.md; the supplied audit prompt overrides conflicting rules.
@@ -368,7 +368,7 @@ SHA-256 of audited functional files:
 
 - `Mod/About/About.xml`: `2909892292502B487731DA43EC992497B7A1FCE5C325CB89E4662457FD3A3361`
 - `Mod/Patches/GeneralLaborSpeed.xml`: `19752EBE12246D2488784A19AD7372F9962FCF53811023917C2C2D44E5844925`
-- `_tools/Test-Patch.ps1`: `E5A970EA24103E00779A66A62191F8A05C6E6913D15D347A14B2632A13BB9671`
+- `Tests/Test-Patch.ps1`: `E5A970EA24103E00779A66A62191F8A05C6E6913D15D347A14B2632A13BB9671`
 
 Next transition only: correct the final About link and recompose the existing Preview's
 suffix/tag/badge and secondary/accent hierarchy, then inspect the result at full and
@@ -386,7 +386,7 @@ Audit on 2026-09-12:
 - Title: `Geniuses Craft Fast Renew (unofficial)` in About.xml. The existing suffix identifies
   the unofficial continuation; no further suffix is needed.
 - Manual functional tests: nine scenarios in `TESTING.md`, written but not yet played.
-- Automated tests: `_tools/Test-Patch.ps1` is now kept in the repository and passes against
+- Automated tests: `Tests/Test-Patch.ps1` is now kept in the repository and passes against
   the installed vanilla XML. It checks both branches, preservation of an existing skill entry,
   the seven curve values and repeated application. It emulates the XML operations only.
 - Shared XML checks rerun successfully: `Check-XmlFields`, `Check-XmlClasses`, `Check-TypeRefs`,

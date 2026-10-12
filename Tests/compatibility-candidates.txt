@@ -1,0 +1,13 @@
+951016023/1.6/Patches/Prod9stats.xml
+951016023/1.5/Patches/Prod9stats.xml
+951016023/1.4/Patches/Prod9stats.xml
+951016023/1.3/Patches/Prod9stats.xml
+951016023/1.2/Patches/Prod9stats.xml
+2208346459/Patches/Stats_Pawns_WorkRecipes.xml
+2594241153/Common/Defs/Core.xml
+2625574564/Patches/Patch.xml
+2866414675/Source/ConsoleApplication1/ConsoleApplication1/Defs/Stats/Stats_Pawns_WorkRecipes.xml
+2866414675/Source/ConsoleApplication1/ConsoleApplication1/Defs14/Defs/Stats/Stats_Pawns_WorkRecipes.xml
+2960593459/1.6/Defs/Dragonianlike/GeneralRace.xml
+3422815711/1.5/Defs/StatDefs.xml
+3751288694/1.6/Patches/ReturnOfWorkStats.xml

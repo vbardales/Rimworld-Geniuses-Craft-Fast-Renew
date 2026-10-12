@@ -19,7 +19,7 @@ level plus aptitude into 0–20; and `StatWorker` uses `StatDef.noSkillFactor`, 
 
 ## Automated XML regression checks
 
-Run `pwsh -NoProfile -File _tools/Test-Patch.ps1` from the repository root. Use `-GameData`
+Run `pwsh -NoProfile -File Tests/Test-Patch.ps1` from the repository root. Use `-GameData`
 to select a different RimWorld `Data` directory. The script reads the installed vanilla stat
 and the shipped patch, checks both conditional branches, preserves a pre-existing Artistic
 entry, verifies the seven curve values below, and checks the documented duplicate-application
@@ -30,7 +30,7 @@ clamping, disabled skills, mechanoids, stat caching, job speed, or save compatib
 needs the game is now a Pickle suite, next section. Shared offline checkers additionally verify XML
 classes and references; checks limited to declared defs have little coverage for this mod.
 
-Rerun on 2026-09-28 against RimWorld 1.6.4871, all green: `_tools/Test-Patch.ps1` (both branches),
+Rerun on 2026-09-28 against RimWorld 1.6.4871, all green: `Tests/Test-Patch.ps1` (both branches),
 `Check-XmlFields`, `Check-XmlClasses`, `Check-TypeRefs`, `Check-DefRefs`, `Check-ConfigErrors` (0 of 0
 defs, which proves nothing about the patch), and `git diff --check`.
 
@@ -47,7 +47,7 @@ or listed not applicable with its reason.
 |---|---|---|
 | 1. The patch landed | `01-patch-lands`, `02-curve` | Def patched by this mod, one skill need, and the value on a colonist |
 | 2. The number is Buitrago's | `02-curve` | Seven levels, 0.3 to 10.3 |
-| 3. Applied once, not twice | `01-patch-lands` (count 1), `04`, `05` and `06` (count 2 with another mod) | The `match` branch and the double application are `_tools/Test-Patch.ps1`, offline |
+| 3. Applied once, not twice | `01-patch-lands` (count 1), `04`, `05` and `06` (count 2 with another mod) | The `match` branch and the double application are `Tests/Test-Patch.ps1`, offline |
 | 4. Level 0 reads 30%, not 10% | `02-curve`, level 0 | |
 | 5. The clamp at 20 | not applicable | The clamp is `SkillRecord.GetLevel`, the engine's; the mod's own edge, level 20, is in `02-curve` |
 | 6. A colonist who cannot craft | not applicable | `GetLevel` returns 0 for a disabled skill, the engine's, and level 0 of `02-curve` is that same number. The recipes riding the stat are facts of the vanilla defs, read from them |
@@ -172,7 +172,7 @@ items. A recursive `rg --no-ignore --hidden --follow` search of XML and C# files
 for `skillNeedFactors` or `SkillNeed` produced 13 candidates, all parsed and inspected.
 This is a text search of the installed corpus, including old versions, not a search of the
 entire online Workshop or an audit of DLLs without sources. The candidate paths relative to
-Workshop `content/294100` are saved in [_tools/compatibility-candidates.txt](_tools/compatibility-candidates.txt).
+Workshop `content/294100` are saved in [Tests/compatibility-candidates.txt](Tests/compatibility-candidates.txt).
 
 Two mods besides the original actively add a Crafting factor to `GeneralLaborSpeed` in their
 installed XML:

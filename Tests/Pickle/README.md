@@ -9,7 +9,7 @@ the work of `done -> tested`, not of `done`. The list at the end names what the 
 
 ## What is in Gherkin, and why it needs a game
 
-`../../_tools/Test-Patch.ps1` and the shared checkers already prove what a file can prove: the two branches of
+`../Test-Patch.ps1` and the shared checkers already prove what a file can prove: the two branches of
 the conditional, the seven curve values, an existing list preserved. Nothing below repeats them. Each feature
 exists because the game's loader, stat worker and pawn generator have to act on the patch.
 
@@ -26,8 +26,8 @@ exists because the game's loader, stat worker and pawn generator have to act on 
 
 | Check | Where it went | Why |
 |---|---|---|
-| The `match` branch of the conditional, an existing list preserved | `_tools/Test-Patch.ps1` | Two XML operations on a def, no game needed |
-| Applying the operation twice gives two entries | `_tools/Test-Patch.ps1` | Same; a documented limitation, not something the game can add |
+| The `match` branch of the conditional, an existing list preserved | `Tests/Test-Patch.ps1` | Two XML operations on a def, no game needed |
+| Applying the operation twice gives two entries | `Tests/Test-Patch.ps1` | Same; a documented limitation, not something the game can add |
 | Sculpting, chemfuel, cremation and burning riding the same stat; cutting stone granting no experience | a read of the vanilla recipes (`workSpeedStat`, `workSkill`, `workSkillLearnFactor`) | Facts about vanilla defs, read from them |
 | A colonist who cannot craft reads 0.3 | none | `SkillRecord.GetLevel` returns 0 for a disabled skill, which is the engine, and level 0 of `02-curve` is the same number. Replaying it tests the game |
 | The clamp at 20 with an aptitude | none | The clamp is `GetLevel`, the engine's. The mod's own edge, level 20, is in `02-curve` |
