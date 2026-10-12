@@ -44,6 +44,7 @@ Old `done` (= `playTests`) replaced by the first failing gate. Decision paragrap
 | 6 localize -> writeTests | Valid: `FRENCH_REVIEW.md` generated 2026-10-11 by `Make-FrenchReview.ps1`, says the mod ships no French and lists no text. `translation_*` `not_applicable` stands (no text added); nothing for Virginie to correct, the review line stays empty on purpose |
 | 7 writeTests -> playTests | Valid. `TEST_SCENARIOS.md` (renamed from `TESTING.md`, nine scenarios each automated or not applicable with its reason, figures checked against the code on 2026-09-12); `_tools/Test-Patch.ps1` rerun 2026-10-11 PASS (both branches); Pickle suite written (six features, `Tests/Pickle/README.md` justifies what stays out). 7.a: `PUBLICATION.md` is a `writeDocs` deliverable (11.e), so the promised behaviours are those of About.xml and README, all covered. 7.f: tested revision `ae14b17`; `Mod/` differs from the Pickle runs only by `ModIcon.png` and `Preview.png`, which no scenario reads. Local scripts: rows in `scripts/LOCAL_SCRIPTS.md` await Virginie |
 | 8 playTests -> shootGallery | Valid. 8.c/8.f: suites played and green (see `tested_on`, `docs/runs/README.md`), the three conditionals each in their own pass. 8.d/8.e: no `@review`, no `@wip`. 8.h: no setting. 8.i: Player.log of the four kept runs read 2026-10-11: the only ERROR/WARN are Pickle harness lines (test mod "did not load any content", dependency without downloadUrl, Steamworks, FrameCapture, old map version), none from this mod or the patch; French UI justified not applicable (no text). 8.m: code review of `Mod/` (one patch, `About.xml`) done 2026-10-11, no defect: the conditional adds to an existing `skillNeedFactors` or creates it; both branches covered by `Test-Patch.ps1`; `code_review_sha` set. Not run: any French pass |
+| 14 followUp (later) | 14.a non-regression: full suite, no `-Filter`, on the published revision, deposited after the commit and the deployment. Never a condition of `playTests` or `shootGallery` (Audit workflow, 2026-10-12; AUDIT.md 8.c, 14.a). Not deposited yet. The 2026-09-28 to 09-30 evidence stays valid for `playTests`: `Mod/` differs only by `ModIcon.png` and `Preview.png` |
 
 Next step: `FRENCH_REVIEW.md` (6.f), then PUBLICATION.md and TEST_SCENARIOS.md at writeTests. Nothing run in game.
 
@@ -78,7 +79,6 @@ hashes: `docs/PROTOCOLS-READ.md`.
 | Suites green, `exitReason` and counts read | Met: minimal 9/0/3 (`exitReason: passed`, 3 features played of 6, the other 3 are the `@requires` ones), plus the three conditional passes 1/0/0 |
 | `@review` captures opened | Not applicable: the suite has none and takes no screenshot |
 | Logs checked, UI in FR and EN | **Open**: English only. The mod adds no text, so a French pass would show nothing new; settle it by one French minimal pass or by writing the not-applicable reason |
-| Non-regression pass on the final revision | Open by `AUDIT.md`'s ordering: deposited last, once nothing else changes |
 | `PUBLICATION.md` | Missing; criterion of `tested -> prepublished` |
 
 ### Evidence trimmed, 2026-10-02
