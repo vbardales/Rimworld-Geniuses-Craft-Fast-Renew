@@ -84,7 +84,7 @@ What is worth keeping once a run is read, and everything else goes:
   check the latest did not repeat;
 - delete `report.html` and `messages.ndjson` at once (derived, tens of megabytes), and the failure captures;
 - this suite has **no `@review` scenario and takes no screenshot**, so there is no picture to keep. If one is
-  added, keep only the captures somebody opened, minified with `Minify-Evidence.ps1`, never a whole `screenshots/`;
+  added, keep only the captures somebody opened, minified with the shared `scripts/Minify-Evidence.ps1`, never a whole `screenshots/`;
 - add one text line per run to `../../docs/runs/README.md`, and never a folder;
 - never delete an evidence folder that `STATUS.md` points at: repoint first. List what goes and what stays before
   deleting anything.
