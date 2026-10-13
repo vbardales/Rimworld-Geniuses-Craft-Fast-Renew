@@ -12,7 +12,6 @@
 .claude/
 
 # Local asset-rendering dependencies
-_tools/node_modules/
 
 # System.
 Thumbs.db
@@ -30,3 +29,4 @@ Art/*.ico
 # screenshots and Player.log grow without limit. One text line per run goes in docs/runs/.
 Tests/Pickle/Evidence/
 evidence/
+Art/.render/

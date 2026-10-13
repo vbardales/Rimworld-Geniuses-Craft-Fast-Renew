@@ -1,0 +1,58 @@
+{
+  "title": "Geniuses Craft Fast Renew (unofficial)",
+  "titleSize": 46,
+  "titleParts": [
+    {
+      "text": "Geniuses Craft Fast"
+    },
+    {
+      "text": "Renew (unofficial)",
+      "scale": 0.65,
+      "font": "ui",
+      "color": "secondary",
+      "breakBefore": true
+    }
+  ],
+  "suffix": "",
+  "tag": "",
+  "copyLines": [
+    "Crafting skill drives general labor speed. Ten times vanilla at level 20."
+  ],
+  "layout": "panel",
+  "panelAnchor": "bottom-right",
+  "backgroundFile": "Preview-source.png",
+  "backgroundPosition": "center",
+  "backgroundSize": "cover",
+  "modIconSource": "ModIcon-source.png",
+  "iconBadge": {
+    "file": "ModIcon-source.png",
+    "corner": "bottom-left",
+    "width": 180,
+    "translate": "-12.5%, 12.5%",
+    "outline": false,
+    "veil": "radial",
+    "veilSize": 275,
+    "veilLeft": -55,
+    "veilBottom": -61
+  },
+  "palette": {
+    "veil": "#302B25",
+    "inkPrimary": "#F2ECE1",
+    "inkSecondary": "#DDB477",
+    "accent": "#E95440",
+    "badgeInk": "#17120E"
+  },
+  "echo": {
+    "file": "echo-preview.png",
+    "preSized": true,
+    "color": "var(--accent)",
+    "width": 240,
+    "height": 240,
+    "opacity": 1,
+    "veil": false,
+    "panelTop": 44,
+    "panelRight": 0,
+    "panelWidth": 30,
+    "flipX": true
+  }
+}

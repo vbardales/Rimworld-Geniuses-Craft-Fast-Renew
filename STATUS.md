@@ -19,12 +19,13 @@ showcase:     complete
 tested_on:    RimWorld 1.6.4871 (Pickle, WSL), 2026-09-28 to 09-30, English only: minimal pass 9/0/3 at e4fd722 (exitReason passed), conditional passes avec-decore, avec-statsmatter, incompat-original 1/0/0 each at aa5f14b
 workshop:     3806761999 (private item created by the 0.1.0 upload of 2026-09-23; PublishedFileId.txt committed in 1692def)
 remaining:
-  - done 2026-10-11: _tools/build-preview.cjs, build-about.sh, package.json removed (shared Render-Preview.cjs + Art/Preview.config.json replace them); Tests/Test-Patch.ps1 stays (moved from _tools/ on 2026-10-12: AGENTS.md closing pass 3, no `_` folder at the root) (one consumer, emulates two XML operations offline), row in scripts/LOCAL_SCRIPTS.md awaits validation; art-README.md still cites the removed tools, belongs to the uncommitted Art migration
+  - done 2026-10-11: _tools/build-preview.cjs, build-about.sh, package.json removed (shared Render-Preview.cjs + Art/Preview.config.json replace them); Tests/Test-Patch.ps1 stays (moved from _tools/ on 2026-10-12: AGENTS.md closing pass 3, no `_` folder at the root) (one consumer, emulates two XML operations offline), row in scripts/LOCAL_SCRIPTS.md awaits validation; art-README.md updated 2026-10-13 (shared renderer), Art migration committed
   - justified not_applicable: UI in French. The mod adds no text, so a French pass shows only vanilla strings; no pass planned (AUDIT.md 8.i, 2026-10-11)
+  - done 2026-10-13: Preview remounted from the shared renderer (panel bottom-right, echo-preview.png, ModIcon badge bottom-left translated -12.5%/+12.5%), validated by Virginie. `echo_review_sha` not set: the echo review belongs to mountPreview, after the accepted gallery. Gallery: only `0-preview.png` exists, captures not taken (stage stays shootGallery)
   - feature: PUBLICATION.md (Steam description block, 1.0.0 change note, gallery order, thank-you drafts) is required before tested -> prepublished; the thank-you register has no row yet for the original, DeCore and Stats Matter
 session:      local_f996ad1c-057c-4d36-a49d-48d4556b2b6c
 updated:      2026-10-11, playTests exit criteria met: shootGallery[1.0.0]
-protocols_read_sha: ac587c23f2481ac64ab621b92d75aac0742dce9e
+protocols_read_sha: e8f5738ee2228246ab626d3fd9ba5f9e1faf7cbf
 ---
 
 # Geniuses Craft Fast Renew — status
