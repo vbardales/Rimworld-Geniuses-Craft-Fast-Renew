@@ -9,7 +9,7 @@ repo:         Rimworld-Geniuses-Craft-Fast-Renew
 visibility:   public
 detached:     yes
 workflow_stage: shootGallery[1.0.0]
-code_review_sha: 2178bbc4503819ab4b8c543432a41566e1053c5f
+code_review_sha: 968b960cb7059f4cf7d2c0e3b5862766f6fa4487
 licence:      silent
 adaptation_licence: MIT, adaptation work only; see LICENSE
 licence_at:   three places, the About description among them
@@ -21,10 +21,11 @@ workshop:     3806761999 (private item created by the 0.1.0 upload of 2026-09-23
 remaining:
   - done 2026-10-11: _tools/build-preview.cjs, build-about.sh, package.json removed (shared Render-Preview.cjs + Art/Preview.config.json replace them); Tests/Test-Patch.ps1 stays (moved from _tools/ on 2026-10-12: AGENTS.md closing pass 3, no `_` folder at the root) (one consumer, emulates two XML operations offline), row in scripts/LOCAL_SCRIPTS.md awaits validation; art-README.md updated 2026-10-13 (shared renderer), Art migration committed
   - justified not_applicable: UI in French. The mod adds no text, so a French pass shows only vanilla strings; no pass planned (AUDIT.md 8.i, 2026-10-11)
+  - 2026-10-13 audit 1 to 8 rechecked: Test-Patch.ps1 PASS both branches, git diff --check clean, About.xml deps unchanged, CHANGELOG [Unreleased], no @wip, Art minimal set, root clean, ModIcon.png 128x128 24.8 KB. 8.m reopened by 968b960 (Mod/ images only, no code): code_review_sha set to 968b960 after reading the diff. Gallery ticket 20261013-131234-255-e6dc queued (07-gallery, sanctuary map)
   - done 2026-10-13: Preview remounted from the shared renderer (panel bottom-right, echo-preview.png, ModIcon badge bottom-left translated -12.5%/+12.5%), validated by Virginie. `echo_review_sha` not set: the echo review belongs to mountPreview, after the accepted gallery. Gallery: only `0-preview.png` exists, captures not taken (stage stays shootGallery)
   - feature: PUBLICATION.md (Steam description block, 1.0.0 change note, gallery order, thank-you drafts) is required before tested -> prepublished; the thank-you register has no row yet for the original, DeCore and Stats Matter
-session:      local_f996ad1c-057c-4d36-a49d-48d4556b2b6c
-updated:      2026-10-11, playTests exit criteria met: shootGallery[1.0.0]
+session:      local_32a02f2c-4fa4-4498-9a39-0e4af0be56a0
+updated:      2026-10-13, Preview mounted, audit rechecked 1 to 8, gallery ticket e6dc filed: shootGallery[1.0.0]
 protocols_read_sha: e8f5738ee2228246ab626d3fd9ba5f9e1faf7cbf
 ---
 
