@@ -11,3 +11,4 @@ Format: `date | revision | pass | language | filter | exitReason | features foun
 2026-09-28 | aa5f14b | avec-decore | English | 04-decore | passed | 6/1 | 1/0/0 | green | Tests/Pickle/Evidence/avec-decore-en-aa5f14b
 2026-09-29 | e4fd722 | minimal | English | (none) | failed | 6/3 | 1/8/3 | Pickle-internal thread error on every colonist spawn, not a mod defect; 01-patch-lands passed | evidence removed 2026-10-02 (superseded by the retry)
 2026-09-30 | e4fd722 | minimal | English | (none) | passed | 6/3 | 9/0/3 | green, thread error did not recur (one-off); 3 skipped are the @requires-gated scenarios, correct under minimal filter | Tests/Pickle/Evidence/minimal-en-e4fd722-retry
+2026-10-13 | 968b960 | gallery-draft1 | English | 07-gallery | failed | 1/1 | 4/2/0 | draft pass: 1 usable capture (promoted), 2 rejected on a camera-framing bug (fixed, not replayed), 2 failed on an unstaged PickleTools module (fixed, not replayed) | Tests/Pickle/Evidence/gallery-draft1

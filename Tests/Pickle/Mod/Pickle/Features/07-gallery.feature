@@ -22,6 +22,24 @@
 # This first pass is a draft played to read the place: the benches are the ones of the save and their positions come from a photograph, so the
 # first run logs what stands where (the buildings of the room) and the pictures are judged and recomposed from it.
 #
+# Ticket 20261013-131234-255-e6dc (gallery-draft1, 2026-10-13): 4/6 green (scenarios 1-3, 0 "recon"). The two stat-card
+# scenarios failed on an undefined step: `Nelim's Pickle Tools: I open the info card...` lives in
+# PickleTools/InspectTabs, a module the pass's wsl-deps map did not stage (only its packageId was missing from
+# @requires and the map, not a problem with the step itself). Fixed 2026-10-15: scenario-level @requires added below,
+# and `nelim.pickletools.inspecttabs` added to wsl-deps.sanctuary.map.
+#
+# Images judged (AUDIT.md 9.d), 2026-10-15: "workshop 1 - three crafters" is usable as-is (the three colonists and their
+# material are in frame, against the recon log's real furniture positions). "workshop 2" and "workshop 3" show the wrong
+# thing: `I frame the cell` centers the camera exactly on that cell (confirmed in CameraZoomSteps.cs), but each scenario
+# framed a cell one away from its own subject's stand position, at zoom 3 close enough to push the subject out of frame
+# entirely (workshop 3) or to its very edge (workshop 2). Fixed: the framed cell now equals the subject's own stand cell
+# in both scenarios. Not replayed yet.
+#
+# Caveat kept open, not fixed here: `I spawn a "Steel" at (x, z)` drops one stack per call, the same size at every
+# position, so scenario 1 cannot actually show "a few" vs "a tall one" by stack size as its own comment (shot 1) claims
+# - only the colonists' positions and the room itself carry the story. A quantity-aware spawn step, if Pickle has one,
+# was not looked up for this pass; left for whoever revisits the shot list.
+#
 # Two families of steps, told apart by their prefix: `Nelim's Sanctuary: ` (SB: the named places and the fixture Nelims-tribe) and
 # `Nelim's Pickle Tools: ` (NPT: studio, camera, decor, colonists, animals). Steps without a prefix are Pickle's own.
 @requires:nelim.pickletools.screenshotstudio
@@ -67,7 +85,7 @@ Feature: the pictures of the Workshop page
     Given the save "Nelims-tribe" is loaded
     And Nelim's Pickle Tools: all animals are removed
     And Nelim's Sanctuary: I am at the sanctuary "preindustrial-workshop"
-    And Nelim's Pickle Tools: I frame the cell (222, 242) at zoom 3
+    And Nelim's Pickle Tools: I frame the cell (221, 242) at zoom 3
     And I set the hour to 12
     And I set the weather to "Clear"
     And Nelim's Pickle Tools: the other colonists are out of frame
@@ -87,7 +105,7 @@ Feature: the pictures of the Workshop page
     Given the save "Nelims-tribe" is loaded
     And Nelim's Pickle Tools: all animals are removed
     And Nelim's Sanctuary: I am at the sanctuary "preindustrial-workshop"
-    And Nelim's Pickle Tools: I frame the cell (219, 236) at zoom 3
+    And Nelim's Pickle Tools: I frame the cell (219, 235) at zoom 3
     And I set the hour to 12
     And I set the weather to "Clear"
     And Nelim's Pickle Tools: a colonist "Mina" of kind "Colonist" exists
@@ -103,6 +121,7 @@ Feature: the pictures of the Workshop page
     When Nelim's Pickle Tools: the interface is shown again
 
   # 4. The stat card of the master: a screen capture, not staged.
+  @requires:nelim.pickletools.inspecttabs
   Scenario: the stat card at Crafting 20
     Given the save "Nelims-tribe" is loaded
     And Nelim's Sanctuary: I am at the sanctuary "window-backdrop-for-height"
@@ -118,6 +137,7 @@ Feature: the pictures of the Workshop page
     And Nelim's Pickle Tools: I close the info card
 
   # 5. The same card at Crafting 0.
+  @requires:nelim.pickletools.inspecttabs
   Scenario: the stat card at Crafting 0
     Given the save "Nelims-tribe" is loaded
     And Nelim's Sanctuary: I am at the sanctuary "window-backdrop-for-height"
