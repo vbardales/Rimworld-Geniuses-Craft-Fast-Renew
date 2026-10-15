@@ -13,6 +13,10 @@
 # plus 60 to settle), clear sky. Pawns hold their cell only while the game is paused, so time passes first, then they are placed and the game
 # is paused. Nelim is Virginie, the only colonist of the fixture. Other people are generated for the scene. Daytime animals only.
 #
+# Look of the people (the photographer dresses them to the palette of the Preview, warm wood and gold): Nelim keeps the fixture's corset and trousers and her own face
+# (brows, smirk smile, blink); Mina, the apprentice, a sage shirt, brown hair, a calm face (she concentrates); Joss, the journeyman, a brown collar shirt,
+# near-black hair, a smile (he is at ease). Hair colours by RGB: no hairstyle is named, so none can be missing from the staged mods.
+#
 # Shot plan (place: `preindustrial-workshop`, centre (223, 237); benches read from the first run: stonecutter table (228, 238), sculpting table
 # (221, 244), crafting spot (226, 244), hand tailoring bench (227, 230); chairs at (227, 238), (221, 243), (224, 243)):
 #   1. 12:00, frame (224, 241) at zoom 2.0. The three crafters at three benches, a stack of what each has made: one club, two blocks, four sculptures;
@@ -70,7 +74,13 @@ Feature: the pictures of the Workshop page
     And Nelim's Pickle Tools: a colonist "Mina" of kind "Colonist" exists
     And Nelim's Pickle Tools: a colonist "Joss" of kind "Colonist" exists
     And "Mina" skill "Crafting" is set to level 0
+    And Nelim's Pickle Tools: "Mina" wears "Apparel_BasicShirt" dyed rgb (150, 160, 110)
+    And Nelim's Pickle Tools: "Mina" hair colour is rgb (120, 70, 40)
+    And Nelim's Pickle Tools: "Mina" face kit is "calm"
     And "Joss" skill "Crafting" is set to level 10
+    And Nelim's Pickle Tools: "Joss" wears "Apparel_CollarShirt" dyed rgb (120, 85, 60)
+    And Nelim's Pickle Tools: "Joss" hair colour is rgb (45, 38, 34)
+    And Nelim's Pickle Tools: "Joss" face kit is "smile"
     And "Nelim" skill "Crafting" is set to level 20
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Mina" stands at (226, 243) facing North
@@ -128,6 +138,9 @@ Feature: the pictures of the Workshop page
     When Nelim's Pickle Tools: I let 477 ticks pass
     And Nelim's Pickle Tools: a colonist "Mina" of kind "Colonist" exists
     And "Mina" skill "Crafting" is set to level 0
+    And Nelim's Pickle Tools: "Mina" wears "Apparel_BasicShirt" dyed rgb (150, 160, 110)
+    And Nelim's Pickle Tools: "Mina" hair colour is rgb (120, 70, 40)
+    And Nelim's Pickle Tools: "Mina" face kit is "calm"
     And Nelim's Pickle Tools: "Mina" stands at (226, 243) facing North
     And Nelim's Pickle Tools: the other colonists are out of frame
     And I spawn a "MeleeWeapon_Club" at (226, 242)
