@@ -53,68 +53,80 @@ Feature: the pictures of the Workshop page
     Given the save "Nelims-tribe" is loaded
     And Nelim's Sanctuary: the buildings within 8 cells of (223, 237) are logged
 
-  # 1. The mod's one idea in one picture: three levels of skill, three stacks.
+  # 1. The mod's one idea in one picture: three levels of skill, three stacks, each crafter on a chair at a bench (stonecutter table east, sculpting table south).
+  # Pawns stay put only while the game is paused, so time passes first, then everyone is placed and the game is paused.
   Scenario: three crafters, three stacks
     Given the save "Nelims-tribe" is loaded
     And Nelim's Pickle Tools: all animals are removed
     And Nelim's Sanctuary: I am at the sanctuary "preindustrial-workshop"
     And I set the hour to 12
     And I set the weather to "Clear"
+    When Nelim's Pickle Tools: I let 60 ticks pass
     And Nelim's Pickle Tools: a colonist "Mina" of kind "Colonist" exists
     And Nelim's Pickle Tools: a colonist "Joss" of kind "Colonist" exists
-    And Nelim's Pickle Tools: the other colonists are out of frame
     And "Mina" skill "Crafting" is set to level 0
     And "Joss" skill "Crafting" is set to level 10
     And "Nelim" skill "Crafting" is set to level 20
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: "Mina" stands at (219, 235) facing West
-    And Nelim's Pickle Tools: "Joss" stands at (224, 242) facing North
-    And Nelim's Pickle Tools: "Nelim" stands at (221, 242) facing North
-    And I spawn a "Steel" at (220, 235)
-    And I spawn a "Steel" at (224, 243)
-    And I spawn a "Steel" at (221, 243)
-    When Nelim's Pickle Tools: I let 60 ticks pass
-    And Nelim's Pickle Tools: an adult animal of kind "Husky" named "Yuki" is spawned at (219, 233)
+    And Nelim's Pickle Tools: "Mina" stands at (224, 243) facing North
+    And Nelim's Pickle Tools: "Joss" stands at (227, 238) facing East
+    And Nelim's Pickle Tools: "Nelim" stands at (221, 243) facing North
+    And Nelim's Pickle Tools: the other colonists are out of frame
+    And I spawn a "Steel" at (224, 242)
+    And I spawn a "Steel" at (226, 238)
+    And I spawn a "Steel" at (226, 237)
+    And I spawn a "Steel" at (220, 242)
+    And I spawn a "Steel" at (221, 242)
+    And I spawn a "Steel" at (222, 242)
+    And I spawn a "Steel" at (222, 241)
+    And Nelim's Pickle Tools: I frame the cell (224, 241) at zoom 2.0
+    And Nelim's Pickle Tools: an adult animal of kind "Husky" named "Yuki" is spawned at (225, 243)
+    And game speed is paused
     And Nelim's Pickle Tools: the map is shown alone for a capture
     And Nelim's Pickle Tools: studio presentation mode is enabled
     Then I take a screenshot "workshop 1 - three crafters"
     When Nelim's Pickle Tools: the interface is shown again
 
-  # 2. The master at her bench.
+  # 2. The master at her sculpting table, five minutes later.
   Scenario: Nelim at her bench, five minutes later
     Given the save "Nelims-tribe" is loaded
     And Nelim's Pickle Tools: all animals are removed
     And Nelim's Sanctuary: I am at the sanctuary "preindustrial-workshop"
-    And Nelim's Pickle Tools: I frame the cell (221, 242) at zoom 3
     And I set the hour to 12
     And I set the weather to "Clear"
-    And Nelim's Pickle Tools: the other colonists are out of frame
+    When Nelim's Pickle Tools: I let 268 ticks pass
     And "Nelim" skill "Crafting" is set to level 20
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: "Nelim" stands at (221, 242) facing North
-    And I spawn a "Steel" at (221, 243)
-    When Nelim's Pickle Tools: I let 268 ticks pass
-    And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poulette" is spawned at (223, 241)
+    And Nelim's Pickle Tools: "Nelim" stands at (221, 243) facing North
+    And Nelim's Pickle Tools: the other colonists are out of frame
+    And I spawn a "Steel" at (220, 242)
+    And I spawn a "Steel" at (221, 242)
+    And I spawn a "Steel" at (222, 242)
+    And I spawn a "Steel" at (222, 241)
+    And Nelim's Pickle Tools: I frame the cell (221, 243) at zoom 4.0
+    And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poulette" is spawned at (223, 242)
+    And game speed is paused
     And Nelim's Pickle Tools: the map is shown alone for a capture
     And Nelim's Pickle Tools: studio presentation mode is enabled
     Then I take a screenshot "workshop 2 - the master at her bench"
     When Nelim's Pickle Tools: the interface is shown again
 
-  # 3. The apprentice, the same noon.
+  # 3. The apprentice at the next chair, ten minutes later: one item.
   Scenario: the apprentice at the next bench, ten minutes later
     Given the save "Nelims-tribe" is loaded
     And Nelim's Pickle Tools: all animals are removed
     And Nelim's Sanctuary: I am at the sanctuary "preindustrial-workshop"
-    And Nelim's Pickle Tools: I frame the cell (219, 235) at zoom 3
     And I set the hour to 12
     And I set the weather to "Clear"
-    And Nelim's Pickle Tools: a colonist "Mina" of kind "Colonist" exists
-    And Nelim's Pickle Tools: the other colonists are out of frame
-    And "Mina" skill "Crafting" is set to level 0
-    And Nelim's Pickle Tools: "Mina" stands at (219, 235) facing West
-    And I spawn a "Steel" at (220, 235)
     When Nelim's Pickle Tools: I let 477 ticks pass
-    And Nelim's Pickle Tools: an adult animal of kind "Husky" named "Yuki" is spawned at (220, 237)
+    And Nelim's Pickle Tools: a colonist "Mina" of kind "Colonist" exists
+    And "Mina" skill "Crafting" is set to level 0
+    And Nelim's Pickle Tools: "Mina" stands at (224, 243) facing North
+    And Nelim's Pickle Tools: the other colonists are out of frame
+    And I spawn a "Steel" at (224, 242)
+    And Nelim's Pickle Tools: I frame the cell (224, 243) at zoom 4.0
+    And Nelim's Pickle Tools: an adult animal of kind "Husky" named "Yuki" is spawned at (225, 242)
+    And game speed is paused
     And Nelim's Pickle Tools: the map is shown alone for a capture
     And Nelim's Pickle Tools: studio presentation mode is enabled
     Then I take a screenshot "workshop 3 - the apprentice"
