@@ -5,17 +5,20 @@
 # That number is invisible on a map, so the series has two kinds of pictures: staged photographs of a workshop where the crafting skill shows in who
 # has made what, and the stat card ("i" button, Stats tab), a screen capture of what it is and not staged.
 #
-# The story: one noon in the preindustrial workshop of the sanctuary, three people at the benches, an apprentice who is starting out (Crafting 0), a
-# journeyman (Crafting 10) and Nelim, the master (Crafting 20). Time unfolds in the game: every picture starts at noon, and waits 5 more game minutes
-# than the one before (12:00, 12:05, 12:10, 12:15; 2 500 ticks make an hour, so about 208 ticks per 5 minutes, plus 60 to settle), clear sky.
-# Nelim is Virginie, the only colonist of the fixture. Other people are generated for the scene. Daytime animals only.
+# The story: one noon in the preindustrial workshop of the sanctuary, three people each at their own bench, making a different thing: Mina, the
+# apprentice (Crafting 0), at the crafting spot in the south-east corner, one club beside her; Joss, the journeyman (Crafting 10), at the stonecutter
+# table on the east wall, two granite blocks; Nelim, the master (Crafting 20), at the sculpting table on the south wall, a row of four small
+# sculptures. The more you know, the more you make: the stacks are the stat, made visible. Time unfolds in the game: every picture starts at
+# noon and waits 5 more game minutes than the one before (12:00, 12:05, 12:10, 12:15; 2 500 ticks make an hour, so about 208 ticks per 5 minutes,
+# plus 60 to settle), clear sky. Pawns hold their cell only while the game is paused, so time passes first, then they are placed and the game
+# is paused. Nelim is Virginie, the only colonist of the fixture. Other people are generated for the scene. Daytime animals only.
 #
-# Shot plan (place: `preindustrial-workshop`, centre (223, 237), zoom 8.5, room x 218-228, z 230-244; benches along the north wall, the west wall and the
-# east wall; the chairs seen on the place's photograph are at about (221, 243), (224, 243), (219, 238), (219, 235), (227, 237), (227, 233), (225, 231)):
-#   1. 12:00, wide frame. The three crafters at three benches; in front of each a stack of what they have made so far: one for the apprentice, a few
-#      for the journeyman, a tall one for the master. The photograph says "the more you know, the more you make". A dog lies near the apprentice.
-#   2. 12:05, close frame on Nelim at her bench (zoom 3), her stack beside her, a hen pecking at the tiles. The master at work, in the series' common coat.
-#   3. 12:10, close frame on the apprentice (zoom 3), one item in front of her: the same noon, the same bench, three hundredths of the rate.
+# Shot plan (place: `preindustrial-workshop`, centre (223, 237); benches read from the first run: stonecutter table (228, 238), sculpting table
+# (221, 244), crafting spot (226, 244), hand tailoring bench (227, 230); chairs at (227, 238), (221, 243), (224, 243)):
+#   1. 12:00, frame (224, 241) at zoom 2.0. The three crafters at three benches, a stack of what each has made: one club, two blocks, four sculptures.
+#      A husky lies near the apprentice.
+#   2. 12:05, close frame on Nelim at her sculpting table (zoom 4), her four sculptures beside her, a hen pecking at the tiles.
+#   3. 12:10, close frame on the apprentice at the crafting spot (zoom 4), one club: the same noon, three hundredths of the rate.
 #   4. 12:15, the information card of Nelim, Stats tab, a screen capture on the backdrop of the window.
 #   5. 12:15, the information card of the apprentice, Stats tab: the same card at Crafting 0.
 #
@@ -68,17 +71,17 @@ Feature: the pictures of the Workshop page
     And "Joss" skill "Crafting" is set to level 10
     And "Nelim" skill "Crafting" is set to level 20
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: "Mina" stands at (224, 243) facing North
+    And Nelim's Pickle Tools: "Mina" stands at (226, 243) facing North
     And Nelim's Pickle Tools: "Joss" stands at (227, 238) facing East
     And Nelim's Pickle Tools: "Nelim" stands at (221, 243) facing North
     And Nelim's Pickle Tools: the other colonists are out of frame
-    And I spawn a "Steel" at (224, 242)
-    And I spawn a "Steel" at (226, 238)
-    And I spawn a "Steel" at (226, 237)
-    And I spawn a "Steel" at (220, 242)
-    And I spawn a "Steel" at (221, 242)
-    And I spawn a "Steel" at (222, 242)
-    And I spawn a "Steel" at (222, 241)
+    And I spawn a "MeleeWeapon_Club" at (226, 242)
+    And I spawn a "BlocksGranite" at (226, 238)
+    And I spawn a "BlocksGranite" at (226, 237)
+    And I spawn a "SculptureSmall" at (220, 242)
+    And I spawn a "SculptureSmall" at (221, 242)
+    And I spawn a "SculptureSmall" at (222, 242)
+    And I spawn a "SculptureSmall" at (222, 241)
     And Nelim's Pickle Tools: I frame the cell (224, 241) at zoom 2.0
     And Nelim's Pickle Tools: an adult animal of kind "Husky" named "Yuki" is spawned at (225, 243)
     And game speed is paused
@@ -99,10 +102,10 @@ Feature: the pictures of the Workshop page
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" stands at (221, 243) facing North
     And Nelim's Pickle Tools: the other colonists are out of frame
-    And I spawn a "Steel" at (220, 242)
-    And I spawn a "Steel" at (221, 242)
-    And I spawn a "Steel" at (222, 242)
-    And I spawn a "Steel" at (222, 241)
+    And I spawn a "SculptureSmall" at (220, 242)
+    And I spawn a "SculptureSmall" at (221, 242)
+    And I spawn a "SculptureSmall" at (222, 242)
+    And I spawn a "SculptureSmall" at (222, 241)
     And Nelim's Pickle Tools: I frame the cell (221, 243) at zoom 4.0
     And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poulette" is spawned at (223, 242)
     And game speed is paused
@@ -121,10 +124,10 @@ Feature: the pictures of the Workshop page
     When Nelim's Pickle Tools: I let 477 ticks pass
     And Nelim's Pickle Tools: a colonist "Mina" of kind "Colonist" exists
     And "Mina" skill "Crafting" is set to level 0
-    And Nelim's Pickle Tools: "Mina" stands at (224, 243) facing North
+    And Nelim's Pickle Tools: "Mina" stands at (226, 243) facing North
     And Nelim's Pickle Tools: the other colonists are out of frame
-    And I spawn a "Steel" at (224, 242)
-    And Nelim's Pickle Tools: I frame the cell (224, 243) at zoom 4.0
+    And I spawn a "MeleeWeapon_Club" at (226, 242)
+    And Nelim's Pickle Tools: I frame the cell (226, 243) at zoom 4.0
     And Nelim's Pickle Tools: an adult animal of kind "Husky" named "Yuki" is spawned at (225, 242)
     And game speed is paused
     And Nelim's Pickle Tools: the map is shown alone for a capture
