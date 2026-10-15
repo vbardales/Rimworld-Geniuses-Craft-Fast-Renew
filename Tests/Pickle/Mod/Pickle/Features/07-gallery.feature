@@ -15,7 +15,9 @@
 #
 # Shot plan (place: `preindustrial-workshop`, centre (223, 237); benches read from the first run: stonecutter table (228, 238), sculpting table
 # (221, 244), crafting spot (226, 244), hand tailoring bench (227, 230); chairs at (227, 238), (221, 243), (224, 243)):
-#   1. 12:00, frame (224, 241) at zoom 2.0. The three crafters at three benches, a stack of what each has made: one club, two blocks, four sculptures.
+#   1. 12:00, frame (224, 241) at zoom 2.0. The three crafters at three benches, a stack of what each has made: one club, two blocks, four sculptures;
+#      behind them two finished instruments of Oriental Instruments Expanded (a zither, a drum): instruments are among what the Crafting stat speeds up.
+#      Atelier (Continued) is staged too: it raises the quality of what is made in an impressive room, which this workshop is.
 #      A husky lies near the apprentice.
 #   2. 12:05, close frame on Nelim at her sculpting table (zoom 4), her four sculptures beside her, a hen pecking at the tiles.
 #   3. 12:10, close frame on the apprentice at the crafting spot (zoom 4), one club: the same noon, three hundredths of the rate.
@@ -82,6 +84,8 @@ Feature: the pictures of the Workshop page
     And I spawn a "SculptureSmall" at (221, 242)
     And I spawn a "SculptureSmall" at (222, 242)
     And I spawn a "SculptureSmall" at (222, 241)
+    And Nelim's Pickle Tools: I place the decor "ORI_OrientalZither" at (223, 240)
+    And Nelim's Pickle Tools: I place the decor "Oriental_Drum" at (226, 240)
     And Nelim's Pickle Tools: I frame the cell (224, 241) at zoom 2.0
     And Nelim's Pickle Tools: an adult animal of kind "Husky" named "Yuki" is spawned at (225, 243)
     And game speed is paused
