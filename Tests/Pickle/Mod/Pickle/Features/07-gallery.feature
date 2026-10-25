@@ -17,7 +17,7 @@
 # Plan B if the owner refuses Miel: Nelim alone against the clock (pile growth only), scenes 1, 4 and 5 are rewritten.
 #
 # Shot plan (one scenario = one image; tables with every criterion are in STATUS.md, "Shotlist"):
-#   1. workshop-1-the-workshop, 14:00, wide, zoom 6.5, frame centred about (226, 240) so the vanometric cells of the west edge stay out. Nelim seated at the
+#   1. workshop-1-the-workshop, 14:00, wide, zoom 6.5, frame centred about (226, 240) so the vanometric cells of the west edge stay out. Nelim standing at the
 #      sculpting table, chisel mid-stroke, ONE small sculpture finished beside her; Miel mid-stride carrying a granite chunk to the stonecutter table;
 #      Shogun lying by the stonecutter; torches lit at the benches; plants: a daylily pot by the door. Says: two hands, one workshop, the master already ahead.
 #      Instant: Nelim has just finished her first piece, Miel is about to set the chunk down. Obtained: forced job on the sculpting table for Nelim, forced haul
@@ -34,8 +34,7 @@
 #      (224, 243) turned toward the pile, her club in hand; Shogun trotting toward the camera (the animal seen from the front). Says: the day, counted. Instant: the
 #      pile just reached six, Miel watches. Closing image. Obtained: forced haul, Miel sits on the building, Shogun walks toward the camera, pause. Needs fed and rested pawns.
 #
-# Steps asked of NPT, 2026-10-25 (answer pending): stat card search typing, work pose that survives the pause (bill?), spawn N of an item, hide every vanometric
-# cell of the frame. If NPT says no, the owner arbitrates. Known: no seated working pose is proven; each scene is 3.5 until the answers come.
+# NPT answered 2026-10-25: will build `the info card Stats tab is scrolled to the stat "<StatDef>"`, `the building "<def>" at (x, z) has the bill "<RecipeDef>"`, `N of the item "<def>" are spawned at (x, z)`, ETA 1-2 h, not played; cells hidden with `the things "VanometricPower" within 10 cells of (219, 237) are hidden`; crafting is a STANDING pose in vanilla; pose across the pause unverified (start job, let ticks pass, then pause).
 #
 # Previous drafts (gallery-draft1, draft2, draft5) are in docs/runs/history.md; their captures were refused 2026-10-25 and the evidence was folded.
 #

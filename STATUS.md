@@ -60,6 +60,8 @@ against the current fifteen-state `AUDIT.md`. `code_review_sha: 968b960` covers 
 
 Story: one afternoon in `preindustrial-workshop`; Nelim (master, Crafting 20) and Miel (apprentice, Crafting 3, needs the owner's authorization and a validated look); the pile grows 1, 4, 6 and carries the stat. Director's pass by an Opus sub-agent: kept the pile count fix, the cell-free frame, chunks for the stonecutter, no hen indoors, Nelim in shot 4, a recomposed closing image, pause ticks written; also kept: the stat card at index 3 (cause before proof) and the closing moved to about 17:00. Nothing rejected.
 
+NPT answered 2026-10-25 (nothing played): the stat step becomes "Stats tab scrolled to the stat", a bill step and a spawn-N step will be written (ETA 1 to 2 h), the cells are hidden with `the things "VanometricPower" within 10 cells of (219, 237) are hidden` (the area-empty step would destroy furniture), crafting is a standing pose in vanilla (Nelim stands at the table), the pose across the pause is unverified (start job, let ticks pass, then pause). Estimates stay 3.5 until those steps compile.
+
 | # | a time | b decor | c living | d pawns | e action (instant, how) | f composition | g subject | j mod | estimate | main risk |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 the workshop | 14:00 Clear, +60 | torches, daylily pot, 1 sculpture, granite chunk | Shogun lying | Nelim corset, Highpony; Miel ochre | carve, haul; forced jobs, pause | zoom 6.5 wide, x-shifted frame | two hands, one workshop | pile 1 vs chunk | 3.5 | cells at west edge, work pose step |
