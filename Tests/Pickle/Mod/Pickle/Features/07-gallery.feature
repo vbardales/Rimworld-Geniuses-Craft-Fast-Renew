@@ -191,3 +191,41 @@ Feature: the pictures of the Workshop page
     Then I take a screenshot "workshop 5 - the stat card at Crafting 0"
     When Nelim's Pickle Tools: screenshot mode is disabled
     And Nelim's Pickle Tools: I close the info card
+
+  # ---- Scenes of the 2026-10-25 shotlist (header). The scenarios above are old drafts, kept until each new scene is judged. ----
+
+  # 2. workshop-2-the-fourth-sculpture: Nelim mid-work at the sculpting table, four finished sculptures in a loose cluster, Shogun lying near her feet.
+  # Instant: she has just set the fourth piece down and started the fifth. Obtained: bill on the table, forced DoBill job, 120 ticks of work, then pause.
+  @shotlist
+  Scenario: the fourth sculpture
+    Given the save "Nelims-tribe" is loaded
+    And Nelim's Pickle Tools: all animals are removed
+    And Nelim's Sanctuary: I am at the sanctuary "preindustrial-workshop"
+    And Nelim's Pickle Tools: the things "VanometricPower" within 10 cells of (219, 237) are hidden
+    And I set the hour to 14
+    And I set the weather to "Clear"
+    When Nelim's Pickle Tools: I let 268 ticks pass
+    And "Nelim" skill "Crafting" is set to level 20
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (30, 110, 80)
+    And Nelim's Pickle Tools: "Nelim" also wears "Apparel_Pants"
+    And I spawn a "BlocksGranite" at (222, 244)
+    And I spawn a "SculptureSmall" at (219, 242)
+    And I spawn a "SculptureSmall" at (220, 242)
+    And I spawn a "SculptureSmall" at (219, 241)
+    And I spawn a "SculptureSmall" at (220, 241)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (220, 245)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (220, 245) is lit
+    And Nelim's Pickle Tools: the building "TableSculpting" at (221, 244) has the bill "Make_SculptureSmall"
+    And Nelim's Pickle Tools: "Nelim" is forced into the job "DoBill" on the building "TableSculpting" at (221, 244)
+    And Nelim's Pickle Tools: an adult animal of kind "Labrador" named "Shogun" is spawned at (222, 242)
+    And Nelim's Pickle Tools: the animal "Shogun" lies at (222, 242) facing West
+    And Nelim's Pickle Tools: I let 120 ticks pass
+    And Nelim's Sanctuary: Nelim has her own face
+    And Nelim's Pickle Tools: "Nelim" mouth is "MouthNormal"
+    And Nelim's Pickle Tools: I frame the cell (221, 243) at zoom 5.0
+    And game speed is paused
+    And Nelim's Pickle Tools: the map is shown alone for a capture
+    And Nelim's Pickle Tools: studio presentation mode is enabled
+    Then I take a screenshot "workshop-2-the-fourth-sculpture"
+    When Nelim's Pickle Tools: the interface is shown again
