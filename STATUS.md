@@ -58,7 +58,7 @@ against the current fifteen-state `AUDIT.md`. `code_review_sha: 968b960` covers 
 
 ## Shotlist (2026-10-25, GALLERY.md criteria; full lines in the header of `07-gallery.feature`)
 
-Story: one afternoon in `preindustrial-workshop`; Nelim (master, Crafting 20) and Miel (apprentice, Crafting 3, needs the owner's authorization and a validated look); the pile grows 1, 4, 6 and carries the stat. Director's pass by an Opus sub-agent: kept the pile count fix, the cell-free frame, chunks for the stonecutter, no hen indoors, Nelim in shot 4, a recomposed closing image, pause ticks written; not kept: moving the stat card to position 3 is kept as index 3, closing moved to about 17:00 (kept).
+Story: one afternoon in `preindustrial-workshop`; Nelim (master, Crafting 20) and Miel (apprentice, Crafting 3, needs the owner's authorization and a validated look); the pile grows 1, 4, 6 and carries the stat. Director's pass by an Opus sub-agent: kept the pile count fix, the cell-free frame, chunks for the stonecutter, no hen indoors, Nelim in shot 4, a recomposed closing image, pause ticks written; also kept: the stat card at index 3 (cause before proof) and the closing moved to about 17:00. Nothing rejected.
 
 | # | a time | b decor | c living | d pawns | e action (instant, how) | f composition | g subject | j mod | estimate | main risk |
 |---|---|---|---|---|---|---|---|---|---|---|
