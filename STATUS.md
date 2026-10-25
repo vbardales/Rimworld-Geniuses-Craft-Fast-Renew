@@ -25,9 +25,9 @@ remaining:
   - done 2026-10-13: Preview remounted from the shared renderer (panel bottom-right, echo-preview.png, ModIcon badge bottom-left translated -12.5%/+12.5%), validated by Virginie. `echo_review_sha` not set: the echo review belongs to mountPreview, after the accepted gallery
   - 2026-10-15, gallery ticket e6dc result read (exit 1, 4/6 green): "three crafters" judged and promoted to `Art/Gallery/1-candidate-three-crafters.png` (9.d); "Nelim at her bench" and "the apprentice" judged and rejected (camera framed one cell off the subject at zoom 3, pushing it to the frame edge or out of it entirely; fixed in 07-gallery.feature); the two stat-card scenarios failed on an undefined step (PickleTools/InspectTabs was never staged for this pass: @requires and wsl-deps.sanctuary.map fixed). About.xml description's hardcoded "1.6" removed (owner rule 2026-10-13); STATUS.md trimmed 41 KB -> dated sections in docs/runs/history.md; protocols re-read, protocols_read_sha current. Replay filed on 7fc56bd: ticket `20261015-174457-834-a434`, the 4 fixed scenarios, wsl-deps.sanctuary.map
   - feature: PUBLICATION.md (Steam description block, 1.0.0 change note, gallery order, thank-you drafts) is required before tested -> prepublished; the thank-you register has no row yet for the original, DeCore and Stats Matter
-session:      local_ee3236c6-0c0c-4486-8420-7ec19ccd2a13
+session:      local_80aee830-8dba-4482-97b8-4e3d7076c422
 updated:      2026-10-15, gallery ticket e6dc read and judged, camera and @requires fixes made, replay a434 filed: shootGallery[1.0.0]
-protocols_read_sha: 6eeb289af92096fa3a7ee40825e3b5221030873d
+protocols_read_sha: 65f1477c389ca6e741af05b7745aa30f6b26b595
 ---
 
 # Geniuses Craft Fast Renew — status
