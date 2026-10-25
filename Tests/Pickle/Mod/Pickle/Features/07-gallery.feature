@@ -14,7 +14,7 @@
 # four at 14:05, six at 17:00. Pawns hold a cell only while the game is paused: wait first, then place and give the job, then pause.
 # Outfits keep through the day (continuity): Nelim in her fixture corset and trousers, hair Roo_HD_Hair_Highpony, brown eyes, her own face; Miel in ochre
 # restoration clothes (look of MIEL-PROFIL.md once marked OK in LOOKS-VALIDATION.md). Daytime animals: Shogun (labrador) and Yuki (husky) of the fixture.
-# Plan B if the owner refuses Miel: Nelim alone against the clock (pile growth only), scenes 1, 4 and 5 are rewritten.
+# Miel authorized by the owner 2026-10-25, only in scenes where Nelim is in frame (1, 4, 5 here; scene 2 is Nelim alone). Her look is still to be shown to the owner.
 #
 # Shot plan (one scenario = one image; tables with every criterion are in STATUS.md, "Shotlist"):
 #   1. workshop-1-the-workshop, 14:00, wide, zoom 6.5, frame centred about (226, 240) so the vanometric cells of the west edge stay out. Nelim standing at the
