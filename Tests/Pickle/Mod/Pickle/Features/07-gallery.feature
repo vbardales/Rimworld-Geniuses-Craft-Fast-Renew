@@ -1,53 +1,43 @@
 # The pictures of the Workshop page, in the order to upload them (AUDIT.md step 9, GALLERY.md). A green run proves only that the route ran:
-# every image is opened and judged against this plan.
+# every image is opened and judged against this plan. Shotlist rewritten 2026-10-25 after the owner refused every draft capture
+# (idle pawns, sculptures lined up like a catalogue, stat card that never shows the stat). The scenarios below are the OLD drafts: they are
+# rewritten, one per scene, once NPT answers the step requests of 2026-10-25 and the owner answers on Miel. No ticket before every scene is 4 or more.
 #
 # The mod adds one thing: a crafter's General Labor Speed grows with the Crafting skill, 0.30 + 0.50 x level (0.3 at level 0, 10.3 at level 20).
-# That number is invisible on a map, so the series has two kinds of pictures: staged photographs of a workshop where the crafting skill shows in who
-# has made what, and the stat card ("i" button, Stats tab), a screen capture of what it is and not staged.
+# That number is invisible on a map. The series makes it visible twice: as a pile that grows faster under the master's hands, and as the stat card.
 #
-# The story: one noon in the preindustrial workshop of the sanctuary, three people each at their own bench, making a different thing: Mina, the
-# apprentice (Crafting 0), at the crafting spot in the south-east corner, one club beside her; Joss, the journeyman (Crafting 10), at the stonecutter
-# table on the east wall, two granite blocks; Nelim, the master (Crafting 20), at the sculpting table on the south wall, a row of four small
-# sculptures. The more you know, the more you make: the stacks are the stat, made visible. Time unfolds in the game: every picture starts at
-# noon and waits 5 more game minutes than the one before (12:00, 12:05, 12:10, 12:15; 2 500 ticks make an hour, so about 208 ticks per 5 minutes,
-# plus 60 to settle), clear sky. Pawns hold their cell only while the game is paused, so time passes first, then they are placed and the game
-# is paused. Nelim is Virginie, the only colonist of the fixture. Other people are generated for the scene. Daytime animals only.
+# THE STORY: one afternoon in the preindustrial workshop of the sanctuary (`preindustrial-workshop`, centre (223, 237)). Nelim (the master, Crafting 20,
+# Virginie, the protagonist) carves small sculptures at the sculpting table (221, 244). Miel Aveline (the apprentice, Crafting 3; NSB cast, needs the
+# owner's authorization and a validated look) makes her first club at the crafting spot (226, 244) and hauls granite chunks to the stonecutter table
+# (228, 238). Time: start 14:00, Clear; each scene reloads the save and waits cumulatively (2 500 ticks per hour): scene 1 at 14:00 (+60 ticks to settle),
+# scene 2 at 14:05 (+268), scene 4 at 14:10 (+477), scene 5 at about 17:00 (+7 500, warm low light). The pile counts the afternoon: one sculpture at 14:00,
+# four at 14:05, six at 17:00. Pawns hold a cell only while the game is paused: wait first, then place and give the job, then pause.
+# Outfits keep through the day (continuity): Nelim in her fixture corset and trousers, hair Roo_HD_Hair_Highpony, brown eyes, her own face; Miel in ochre
+# restoration clothes (look of MIEL-PROFIL.md once marked OK in LOOKS-VALIDATION.md). Daytime animals: Shogun (labrador) and Yuki (husky) of the fixture.
+# Plan B if the owner refuses Miel: Nelim alone against the clock (pile growth only), scenes 1, 4 and 5 are rewritten.
 #
-# Look of the people (the photographer dresses them to the palette of the Preview, warm wood and gold): Nelim keeps the fixture's corset and trousers and her own face
-# (brows, smirk smile, blink); Mina, the apprentice, a sage shirt, brown hair, a calm face (she concentrates); Joss, the journeyman, a brown collar shirt,
-# near-black hair, a smile (he is at ease). Hair colours by RGB: no hairstyle is named, so none can be missing from the staged mods.
+# Shot plan (one scenario = one image; tables with every criterion are in STATUS.md, "Shotlist"):
+#   1. workshop-1-the-workshop, 14:00, wide, zoom 6.5, frame centred about (226, 240) so the vanometric cells of the west edge stay out. Nelim seated at the
+#      sculpting table, chisel mid-stroke, ONE small sculpture finished beside her; Miel mid-stride carrying a granite chunk to the stonecutter table;
+#      Shogun lying by the stonecutter; torches lit at the benches; plants: a daylily pot by the door. Says: two hands, one workshop, the master already ahead.
+#      Instant: Nelim has just finished her first piece, Miel is about to set the chunk down. Obtained: forced job on the sculpting table for Nelim, forced haul
+#      for Miel, game paused at that tick.
+#   2. workshop-2-the-fourth-sculpture, 14:05, medium, zoom 5 on Nelim at the sculpting table: four sculptures on the floor, the fifth block in front of her,
+#      Shogun lying, head turned toward the chisel; focused mouth (override of her smile, justified by concentration). Says: the pile grows. Instant: she has just
+#      started the next one. Obtained: forced sculpting job, pause mid-work.
+#   3. workshop-3-the-stat-card, interface window on `window-backdrop-for-height`, cropped laterally, no subtitle: Nelim's Stats card filtered on "labor",
+#      General Labor Speed 10.3. Needs the search-box step asked of NPT (else scroll to the row). Not a staged photograph, not rated.
+#   4. workshop-4-the-first-club, 14:10, close, zoom 3.2: Nelim in the soft foreground passing with a sculpture in her hands, Miel behind at the crafting spot with
+#      her one club, Yuki facing Miel's hands. Says: three hundredths of the rate, the same afternoon. Instant: Miel has just finished the club, Nelim walks past.
+#      Obtained: forced haul (carries) for Nelim, forced crafting job for Miel, pause.
+#   5. workshop-5-the-count, about 17:00, medium, zoom 4 at the door: Nelim mid-stride carrying sculpture number six to the pile, Miel seated on the chair at
+#      (224, 243) turned toward the pile, her club in hand; Shogun trotting toward the camera (the animal seen from the front). Says: the day, counted. Instant: the
+#      pile just reached six, Miel watches. Closing image. Obtained: forced haul, Miel sits on the building, Shogun walks toward the camera, pause. Needs fed and rested pawns.
 #
-# Shot plan (place: `preindustrial-workshop`, centre (223, 237); benches read from the first run: stonecutter table (228, 238), sculpting table
-# (221, 244), crafting spot (226, 244), hand tailoring bench (227, 230); chairs at (227, 238), (221, 243), (224, 243)):
-#   1. 12:00, frame (224, 241) at zoom 2.0. The three crafters at three benches, a stack of what each has made: one club, two blocks, four sculptures;
-#      behind them two finished instruments of Oriental Instruments Expanded (a zither, a drum): instruments are among what the Crafting stat speeds up.
-#      Atelier (Continued) is staged too: it raises the quality of what is made in an impressive room, which this workshop is.
-#      A husky lies near the apprentice.
-#   2. 12:05, close frame on Nelim at her sculpting table (zoom 4), her four sculptures beside her, a hen pecking at the tiles.
-#   3. 12:10, close frame on the apprentice at the crafting spot (zoom 4), one club: the same noon, three hundredths of the rate.
-#   4. 12:15, the information card of Nelim, Stats tab, a screen capture on the backdrop of the window.
-#   5. 12:15, the information card of the apprentice, Stats tab: the same card at Crafting 0.
+# Steps asked of NPT, 2026-10-25 (answer pending): stat card search typing, work pose that survives the pause (bill?), spawn N of an item, hide every vanometric
+# cell of the frame. If NPT says no, the owner arbitrates. Known: no seated working pose is proven; each scene is 3.5 until the answers come.
 #
-# This first pass is a draft played to read the place: the benches are the ones of the save and their positions come from a photograph, so the
-# first run logs what stands where (the buildings of the room) and the pictures are judged and recomposed from it.
-#
-# Ticket 20261013-131234-255-e6dc (gallery-draft1, 2026-10-13): 4/6 green (scenarios 1-3, 0 "recon"). The two stat-card
-# scenarios failed on an undefined step: `Nelim's Pickle Tools: I open the info card...` lives in
-# PickleTools/InspectTabs, a module the pass's wsl-deps map did not stage (only its packageId was missing from
-# @requires and the map, not a problem with the step itself). Fixed 2026-10-15: scenario-level @requires added below,
-# and `nelim.pickletools.inspecttabs` added to wsl-deps.sanctuary.map.
-#
-# Images judged (AUDIT.md 9.d), 2026-10-15: "workshop 1 - three crafters" is usable as-is (the three colonists and their
-# material are in frame, against the recon log's real furniture positions). "workshop 2" and "workshop 3" show the wrong
-# thing: `I frame the cell` centers the camera exactly on that cell (confirmed in CameraZoomSteps.cs), but each scenario
-# framed a cell one away from its own subject's stand position, at zoom 3 close enough to push the subject out of frame
-# entirely (workshop 3) or to its very edge (workshop 2). Fixed: the framed cell now equals the subject's own stand cell
-# in both scenarios. Not replayed yet.
-#
-# Caveat kept open, not fixed here: `I spawn a "Steel" at (x, z)` drops one stack per call, the same size at every
-# position, so scenario 1 cannot actually show "a few" vs "a tall one" by stack size as its own comment (shot 1) claims
-# - only the colonists' positions and the room itself carry the story. A quantity-aware spawn step, if Pickle has one,
-# was not looked up for this pass; left for whoever revisits the shot list.
+# Previous drafts (gallery-draft1, draft2, draft5) are in docs/runs/history.md; their captures were refused 2026-10-25 and the evidence was folded.
 #
 # Two families of steps, told apart by their prefix: `Nelim's Sanctuary: ` (SB: the named places and the fixture Nelims-tribe) and
 # `Nelim's Pickle Tools: ` (NPT: studio, camera, decor, colonists, animals). Steps without a prefix are Pickle's own.

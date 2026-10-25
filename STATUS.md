@@ -26,7 +26,7 @@ remaining:
   - 2026-10-15, gallery ticket e6dc result read (exit 1, 4/6 green): "three crafters" judged and promoted to `Art/Gallery/1-candidate-three-crafters.png` (9.d); "Nelim at her bench" and "the apprentice" judged and rejected (camera framed one cell off the subject at zoom 3, pushing it to the frame edge or out of it entirely; fixed in 07-gallery.feature); the two stat-card scenarios failed on an undefined step (PickleTools/InspectTabs was never staged for this pass: @requires and wsl-deps.sanctuary.map fixed). About.xml description's hardcoded "1.6" removed (owner rule 2026-10-13); STATUS.md trimmed 41 KB -> dated sections in docs/runs/history.md; protocols re-read, protocols_read_sha current. Replay filed on 7fc56bd: ticket `20261015-174457-834-a434`, the 4 fixed scenarios, wsl-deps.sanctuary.map
   - feature: PUBLICATION.md (Steam description block, 1.0.0 change note, gallery order, thank-you drafts) is required before tested -> prepublished; the thank-you register has no row yet for the original, DeCore and Stats Matter
 session:      local_80aee830-8dba-4482-97b8-4e3d7076c422
-updated:      2026-10-15, gallery ticket e6dc read and judged, camera and @requires fixes made, replay a434 filed: shootGallery[1.0.0]
+updated:      2026-10-25, protocols re-read, Preview regenerated, Evidence sorted, gallery drafts refused, shotlist rewritten (score 3.5, no ticket): shootGallery[1.0.0]
 protocols_read_sha: 65f1477c389ca6e741af05b7745aa30f6b26b595
 ---
 
@@ -55,3 +55,17 @@ against the current fifteen-state `AUDIT.md`. `code_review_sha: 968b960` covers 
   inheritance, so those three would inherit this mod's Crafting entry. Needs Vanilla Skills Expanded; neither mod
   is active now. Worth a pass only if the owner runs both.
 
+
+## Shotlist (2026-10-25, GALLERY.md criteria; full lines in the header of `07-gallery.feature`)
+
+Story: one afternoon in `preindustrial-workshop`; Nelim (master, Crafting 20) and Miel (apprentice, Crafting 3, needs the owner's authorization and a validated look); the pile grows 1, 4, 6 and carries the stat. Director's pass by an Opus sub-agent: kept the pile count fix, the cell-free frame, chunks for the stonecutter, no hen indoors, Nelim in shot 4, a recomposed closing image, pause ticks written; not kept: moving the stat card to position 3 is kept as index 3, closing moved to about 17:00 (kept).
+
+| # | a time | b decor | c living | d pawns | e action (instant, how) | f composition | g subject | j mod | estimate | main risk |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 the workshop | 14:00 Clear, +60 | torches, daylily pot, 1 sculpture, granite chunk | Shogun lying | Nelim corset, Highpony; Miel ochre | carve, haul; forced jobs, pause | zoom 6.5 wide, x-shifted frame | two hands, one workshop | pile 1 vs chunk | 3.5 | cells at west edge, work pose step |
+| 2 the fourth sculpture | 14:05 +268 | 4 sculptures, block | Shogun lying, head turned | Nelim, focused mouth | next piece started; forced job | zoom 5 medium | the pile grows | 4 sculptures | 3.5 | work pose survives pause |
+| 3 the stat card | interface | n/a | n/a | n/a | n/a | window-backdrop-for-height, cropped | 10.3 | the number | not rated | search-box step missing |
+| 4 the first club | 14:10 +477 | 1 club, bench | Yuki faces her hands | Nelim passing with a sculpture; Miel | club done, Nelim walks by; forced jobs | zoom 3.2 close, soft foreground | 3 hundredths of the rate | Miel's single club | 3.5 | Miel not authorized |
+| 5 the count | about 17:00 +7500 | pile of 6, chair | Shogun toward camera | Nelim carrying #6; Miel seated | pile reached six; forced haul, sits | zoom 4 medium at the door | the day, counted | pile of 6 | 3.5 | needs fed pawns, Miel |
+
+k (series): story written, variety wide/medium/close, opening 1, closing 5, rhythm moves on: ok on paper. Self-score of the shotlist: 3.5 (scenes 3.5 each, below 4): no ticket. Blocking: (1) owner authorization of Miel, plan B Nelim alone; (2) NPT answers on four steps (stat search, work pose, spawn N, hide cells), asked 2026-10-25. Refused 2026-10-25: `1-candidate-three-crafters.png` and the four draft-2 captures (verdicts in the session).
