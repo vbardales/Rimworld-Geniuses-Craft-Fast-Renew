@@ -9,7 +9,7 @@ repo:         Rimworld-Geniuses-Craft-Fast-Renew
 visibility:   public
 detached:     yes
 workflow_stage: shootGallery[1.0.0]
-code_review_sha: 968b960cb7059f4cf7d2c0e3b5862766f6fa4487
+code_review_sha: c4b202b63949deeb639fd94c2842f1fc812aed91
 licence:      silent
 adaptation_licence: MIT, adaptation work only; see LICENSE
 licence_at:   three places, the About description among them
@@ -19,6 +19,7 @@ showcase:     complete
 tested_on:    RimWorld 1.6.4871 (Pickle, WSL), 2026-09-28 to 09-30, English only: minimal pass 9/0/3 at e4fd722 (exitReason passed), conditional passes avec-decore, avec-statsmatter, incompat-original 1/0/0 each at aa5f14b
 workshop:     3806761999 (private item created by the 0.1.0 upload of 2026-09-23; PublishedFileId.txt committed in 1692def)
 remaining:
+  - 2026-10-30 replay-audit 1 to 8 done, stage unchanged: 8.m reopened by 4869f3a (Preview.png) and the About.xml description wording; `git diff 968b960 HEAD -- Mod` read: images and description text only, no patch change (Mod/Patches last touched before aa5f14b, the tested sha); code_review_sha set to c4b202b (revue du diff : images et texte seuls). Weak proofs (STATUS.md only): 4.g dependencies record, Test-Patch.ps1 PASS of 2026-10-13 (LOCAL_SCRIPTS row not validated, not rerun)
   - 2026-10-30 ticket 20261025-185730-448-35be (scene 2 alone, 706e311) read: exit 1, failed at step 4, the NPT hide step `the things "VanometricPower" within 10 cells of (219, 237) are hidden` ("No VanometricPower within 10 cells": defName or centre wrong; the cylinders are visible in `Tests/Pickle/Inbox/gallery-s2/screenshots/`). Asked NPT for the exact defName, radius shape and a no-op mode; bill step, forced DoBill and pose across pause still undecided (steps after 4 never ran). Replay scene 2 alone after NPT answers. Then write scenes 1, 4, 5 and the stat-card scenario (GeneralLaborSpeed) from the shotlist, one small ticket each; show Miel look to the owner on the first capture (not OK in LOOKS-VALIDATION.md); delete 1-candidate-three-crafters.png (refused); tested_1_7 not recorded; Evidence/ sorted, Parked/gallery-draft5 waits for a green "three crafters"
   - done 2026-10-11: _tools/build-preview.cjs, build-about.sh, package.json removed (shared Render-Preview.cjs + Art/Preview.config.json replace them); Tests/Test-Patch.ps1 stays (moved from _tools/ on 2026-10-12: AGENTS.md closing pass 3, no `_` folder at the root) (one consumer, emulates two XML operations offline), row in scripts/LOCAL_SCRIPTS.md awaits validation; art-README.md updated 2026-10-13 (shared renderer), Art migration committed
   - justified not_applicable: UI in French. The mod adds no text, so a French pass shows only vanilla strings; no pass planned (AUDIT.md 8.i, 2026-10-11)
