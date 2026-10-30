@@ -201,7 +201,8 @@ Feature: the pictures of the Workshop page
     Given the save "Nelims-tribe" is loaded
     And Nelim's Pickle Tools: all animals are removed
     And Nelim's Sanctuary: I am at the sanctuary "preindustrial-workshop"
-    And Nelim's Pickle Tools: the things "VanometricPower" within 10 cells of (219, 237) are hidden
+    And Nelim's Pickle Tools: the things within 12 cells of (222, 243) are listed
+    And Nelim's Pickle Tools: the things "VanometricPower" within 10 cells of (219, 237) are hidden when present
     And I set the hour to 14
     And I set the weather to "Clear"
     When Nelim's Pickle Tools: I let 268 ticks pass
