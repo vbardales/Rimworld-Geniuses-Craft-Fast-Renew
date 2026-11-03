@@ -31,8 +31,6 @@
   },
   "echo": {
     "file": "echo-preview.png",
-    "color": "var(--accent)",
-    "width": 240,
-    "height": 240
+    "color": "var(--accent)"
   }
 }
