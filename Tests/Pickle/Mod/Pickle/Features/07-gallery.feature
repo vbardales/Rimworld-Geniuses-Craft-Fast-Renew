@@ -202,7 +202,7 @@ Feature: the pictures of the Workshop page
     And Nelim's Pickle Tools: all animals are removed
     And Nelim's Sanctuary: I am at the sanctuary "preindustrial-workshop"
     And Nelim's Pickle Tools: the things within 12 cells of (222, 243) are listed
-    And Nelim's Pickle Tools: the things "VanometricPower" within 10 cells of (219, 237) are hidden when present
+    And Nelim's Pickle Tools: the things "VanometricPowerCell" within 10 cells of (219, 238) are hidden when present
     And I set the hour to 14
     And I set the weather to "Clear"
     When Nelim's Pickle Tools: I let 268 ticks pass
@@ -210,7 +210,7 @@ Feature: the pictures of the Workshop page
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (30, 110, 80)
     And Nelim's Pickle Tools: "Nelim" also wears "Apparel_Pants"
-    And I spawn a "BlocksGranite" at (222, 244)
+    And I spawn a "BlocksGranite" at (222, 243)
     And I spawn a "SculptureSmall" at (219, 242)
     And I spawn a "SculptureSmall" at (220, 242)
     And I spawn a "SculptureSmall" at (219, 241)
