@@ -35,7 +35,7 @@
 #      the lit benches read at 268 px; the mod itself shows from scene 2 on, this is the opening image. Cells hidden with
 #      `the things "VanometricPower" within 10 cells of (219, 237) are hidden`.
 #   2. workshop-2-the-fourth-sculpture, 14:05, medium. Zoom 5 on (221, 243): Nelim sharp in the middle third, foreground the four finished `SculptureSmall` in a loose
-#      cluster (not a line) on the tiles at (219..220, 241..242), background the sculpting table and a torch, light warm from the torch at (223, 244). Nelim
+#      cluster (not a line) on the tiles at (219..220, 241..242), background the sculpting table and a torch, light warm from the torch at (223, 243). Nelim
 #      mid-work (forced sculpting job, paused 120 ticks after the start, chisel arm raised), the next stone block on the table. Shogun lying near her feet, head
 #      turned to the chisel. Says: the pile grows. Instant: she has just set the fourth piece down and started the fifth. Thumbnail: the cluster of four brown
 #      pieces spans about a quarter of the width (1 cell = 15 px at 268 px) against beige tiles.
@@ -215,8 +215,8 @@ Feature: the pictures of the Workshop page
     And I spawn a "SculptureSmall" at (220, 242)
     And I spawn a "SculptureSmall" at (219, 241)
     And I spawn a "SculptureSmall" at (220, 241)
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (223, 244)
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (223, 244) is lit
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (223, 243)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (223, 243) is lit
     And Nelim's Pickle Tools: the building "TableSculpting" at (221, 244) has the bill "Make_SculptureSmall"
     And Nelim's Pickle Tools: "Nelim" is forced into the job "DoBill" on the building "TableSculpting" at (221, 244)
     And Nelim's Pickle Tools: an adult animal of kind "Labrador" named "Shogun" is spawned at (222, 242)
