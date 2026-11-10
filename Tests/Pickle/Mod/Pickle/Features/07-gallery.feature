@@ -219,7 +219,7 @@ Feature: the pictures of the Workshop page
     And Nelim's Pickle Tools: the decor "TorchLamp" at (223, 243) is lit
     And Nelim's Pickle Tools: the building "TableSculpting" at (221, 244) has the bill "Make_SculptureSmall"
     And Nelim's Pickle Tools: "Nelim" is forced into the job "DoBill" on the building "TableSculpting" at (221, 244)
-    And Nelim's Pickle Tools: an adult animal of kind "Labrador" named "Shogun" is spawned at (222, 242)
+    And Nelim's Pickle Tools: an adult animal of kind "LabradorRetriever" named "Shogun" is spawned at (222, 242)
     And Nelim's Pickle Tools: the animal "Shogun" lies at (222, 242) facing West
     And Nelim's Pickle Tools: I let 120 ticks pass
     And Nelim's Sanctuary: Nelim has her own face
